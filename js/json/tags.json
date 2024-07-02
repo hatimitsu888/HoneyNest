@@ -1,0 +1,10 @@
+{
+    "game" : {
+        "img" : "game.svg",
+        "bgcolor" : "rgb(255, 0, 0)"
+    },
+    "video" : {
+        "img" : "video.svg",
+        "bgcolor" : "rgb(0, 19, 192)"
+    }
+}
