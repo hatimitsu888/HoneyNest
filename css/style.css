@@ -1,0 +1,22 @@
+html {
+    font-size: 10px;
+}
+
+header {
+    width: auto;
+    height: 100px;
+    background-color: #ff0;
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+#logo {
+    display: block;
+    width: 300px;
+    height: auto;
+    background-color: #00f;
+}
+#header-link > li {
+    display: inline-block;
+    width: 260px;
+    background-color: #f00;
+}
