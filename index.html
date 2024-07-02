@@ -3,30 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
     <link href="/HoneyNest/css/style.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+
     <title>はちみつの巣</title>
 </head>
+
 <body>
     <header>
-        <h1 id="logo">
-            <a href="/HoneyNest/index.html"><img src="/HoneyNest/img/logo.webp"></a>
-        </h1>
-        <ul id="header-link">
-            <li>
-                <a href="/HoneyNest/blog/index.html">BLOG</a>
+        <ul class="header">
+            <li class="logo">
+                <h1>
+                    <a href="/HoneyNest/index.html"><img src="/HoneyNest/img/logo.webp"></a>
+                </h1>
             </li>
-            <li>
-                <span id="link-button">
-                    LINK
-                    <ul>
-                        <li><a href="https://www.youtube.com/@Hatimitsu">Youtube</a></li>
-                        <li><a href="https://x.com/Hatimitsu83yg">X</a></li>
-                        <li><a href="https://minecraft-mcworld.com/author/032204c869ca56e9a42e983b0ddb352361320f28/">クラフターズコロニー</a></li>
-                    </ul>
-                </span>
+            <li  class="header-link">
+                <ul>
+                    <li>
+                        <a href="/HoneyNest/blog/index.html">BLOG</a>
+                    </li>
+                    <li class="link-button">
+                        LINK
+                        <ul class="dropdown-lists">
+                            <li class="dropdown-list Youtube"><a href="https://www.youtube.com/@Hatimitsu" target="_blank" rel="noreferrer noopener">Youtube</a></li>
+                            <li class="dropdown-list X"><a href="https://x.com/Hatimitsu83yg" target="_blank" rel="noreferrer noopener">X</a></li>
+                            <li class="dropdown-list CraftersColoney"><a href="https://minecraft-mcworld.com/author/032204c869ca56e9a42e983b0ddb352361320f28/" target="_blank" rel="noreferrer noopener">クラフターズコロニー</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
         </ul>
     </header>
+
+    <section id="#mainvisual">
+        <div class="mainvisual-flex">
+            <div class="Youtube-contents">
+                <div class="Youtube-contents-center">
+                    <iframe src="https://www.youtube.com/embed/?list=UUukW7dbv2YZcfJGwVcz--lg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="new-articles">
+                <h1>最新記事</h1>
+                <div class="line"></div>
+                <div class="articles">
+
+                    <div class="article">
+                        <div class="tag-icon" style="background-color:rgb(0, 19, 192);">
+                            <img src="/HoneyNest/img/icon/game.svg">
+                        </div>
+                        <div class="article-text">
+                            <div class="date">2024/10/25</div>
+                            <a class="title" href="#">記事記事記事記事</a>
+                        </div>
+                    </div>
+
+                    <div class="article">
+                        <div class="tag-icon" style="background-color:#f00;">
+                            <img src="/HoneyNest/img/icon/video.svg">
+                        </div>
+                        <div class="article-text">
+                            <div class="date">2024/10/25</div>
+                            <a class="title" href="#">記事記事記事記事</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
