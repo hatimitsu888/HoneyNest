@@ -15,9 +15,9 @@ async function json_request() {
     add_comment(articles_json, tags_json);
 }
 
-// 最新記事を見えない状態で追加
+// 最新記事を見えない状態で追加（最大5件）
 function add_comment(articles, tags) {
-    for (let comment_count = 0; comment_count < Object.keys(articles).length; comment_count ++){
+    for (let comment_count = Object.keys(articles).length - 5; comment_count < Object.keys(articles).length; comment_count ++){
         const article = articles[comment_count];
         const write_html = `
             <div class="article hidden">
