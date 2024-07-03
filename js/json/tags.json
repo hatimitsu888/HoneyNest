@@ -1,10 +1,10 @@
 {
     "game" : {
         "img" : "game.svg",
-        "bgcolor" : "rgb(255, 0, 0)"
+        "bgcolor" : "rgb(0, 19, 192)"
     },
     "video" : {
         "img" : "video.svg",
-        "bgcolor" : "rgb(0, 19, 192)"
+        "bgcolor" : "rgb(255, 0, 0)"
     }
 }
