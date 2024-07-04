@@ -8,5 +8,10 @@
         "name": "動画関連",
         "img" : "video.svg",
         "color" : "rgb(255, 0, 0)"
+    },
+    "blog" : {
+        "name": "ブログ",
+        "img" : "blog.svg",
+        "color" : "rgb(0, 148, 122)"
     }
 }
