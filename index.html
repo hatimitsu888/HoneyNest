@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
-    <link href="/HoneyNest/css/header.css" rel="stylesheet">
+    <link href="/HoneyNest/css/common.css" rel="stylesheet">
     <link href="/HoneyNest/css/style.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,52 +25,65 @@
                 </h1>
             </li>
             <div class="hamburger"><span class="hamburger-icon"></span></div>
-            <li  class="header-link">
-                <ul>
-                    <li>
-                        <a href="/HoneyNest/blog/index.html">BLOG</a>
-                    </li>
-                    <li class="link-button">
-                        LINK
-                        <ul class="dropdown-lists">
-                            <li class="dropdown-list Youtube"><a href="https://www.youtube.com/@Hatimitsu" target="_blank" rel="noreferrer noopener">Youtube</a></li>
-                            <li class="dropdown-list X"><a href="https://x.com/Hatimitsu83yg" target="_blank" rel="noreferrer noopener">X</a></li>
-                            <li class="dropdown-list CraftersColoney"><a href="https://minecraft-mcworld.com/author/032204c869ca56e9a42e983b0ddb352361320f28/" target="_blank" rel="noreferrer noopener">クラフターズコロニー</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            <li class="header-link">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/HoneyNest/blog/index.html">BLOG</a>
+                        </li>
+                        <li class="link-button">
+                            LINK
+                            <ul class="dropdown-lists">
+                                <li class="dropdown-list Youtube"><a href="https://www.youtube.com/@Hatimitsu" target="_blank" rel="noreferrer noopener">Youtube</a></li>
+                                <li class="dropdown-list X"><a href="https://x.com/Hatimitsu83yg" target="_blank" rel="noreferrer noopener">X</a></li>
+                                <li class="dropdown-list CraftersColoney"><a href="https://minecraft-mcworld.com/author/032204c869ca56e9a42e983b0ddb352361320f28/" target="_blank" rel="noreferrer noopener">クラフターズコロニー</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </li>
         </ul>
     </header>
 
-    <section id="mainvisual">
-        <div class="mainvisual-flex">
-            <div class="Youtube-contents">
-                <div class="Youtube-contents-center">
-                    <iframe src="https://www.youtube.com/embed/videoseries?si=FDQb-bTdPIDODkm2&amp;list=PLPJOoUd42z4Hq5Jh7AhyoUaihMYrs1KnY&mute=1&widget_referrer&origin=hatimitsu888.github.io" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <main>
+        <section id="mainvisual">
+            <div class="mainvisual-flex">
+                <div class="Youtube-contents">
+                    <div class="Youtube-contents-center">
+                        <iframe src="https://www.youtube.com/embed/videoseries?si=FDQb-bTdPIDODkm2&amp;list=PLPJOoUd42z4Hq5Jh7AhyoUaihMYrs1KnY&mute=1&widget_referrer&origin=hatimitsu888.github.io" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                
+                <div class="top-articles">
+                    <h1>トップ記事</h1>
+                    <div class="line"></div>
+                    <div class="article-area">
+                        <div class="mainvisual articles"></div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="top-articles">
-                <h1>トップ記事</h1>
-                <div class="line"></div>
-                <div class="article-area">
-                    <div class="mainvisual articles"></div>
-                </div>
+        </section>
+
+        <section id="articles">
+            <div class="section-title">
+                <span class="section-line">
+                    <h1>最新記事</h1>
+                </span>
             </div>
-        </div>
-    </section>
+            <div class="new-articles"></div>
+        </section>
+    </main>
 
-    <section id="articles">
-        <div class="section-title">
-            <span class="section-line">
-                <h1>最新記事</h1>
-            </span>
-        </div>
-        <div class="new-articles"></div>
-    </section>
+    <footer>
+        <a href="#" class="page-top">
+            <div class="hex"></div>
+            <div class="arrow"></div>
+        </a>
+        <p class="copylight"><small>&copy; 2024 はちみつ</small></p>
+    </footer>
 
-    <script src="./js/header.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
