@@ -1,9 +1,11 @@
 {
     "game" : {
+        "name": "ゲーム",
         "img" : "game.svg",
         "bgcolor" : "rgb(0, 19, 192)"
     },
     "video" : {
+        "name": "動画関連",
         "img" : "video.svg",
         "bgcolor" : "rgb(255, 0, 0)"
     }
