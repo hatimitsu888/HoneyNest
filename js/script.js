@@ -1,7 +1,8 @@
 'use strict'
 
 // 記事欄（コメント欄）
-let articles_obj = document.querySelector('.articles');
+let articles_obj = document.querySelector('.mainvisual.articles');
+let new_articles_obj = document.querySelector('.new-articles');
 
 // 記事・タグを取得
 async function fetch_json(url) {
@@ -13,16 +14,17 @@ async function json_request() {
     const articles_json = await fetch_json('./js/json/articles.json');
     const tags_json = await fetch_json('./js/json/tags.json');
     add_comment(articles_json, tags_json);
+    add_new_article(articles_json, tags_json);
 }
 
 // 最新記事を見えない状態で追加
 function add_comment(articles, tags) {
-    for (let comment_count = 0; comment_count < Object.keys(articles).length; comment_count ++){
-        const article = articles[comment_count];
+    for (let i = 0; i < Object.keys(articles).length; i ++){
+        const article = articles[i];
         const write_html = `
             <div class="mainvisual article hidden">
                 <a class="mainvisual article-link" href="${article.link}">
-                    <div class="mainvisual tag-icon" style="background-color:${tags[article.tag]['bgcolor']}">
+                    <div class="mainvisual tag-icon" style="background-color:${tags[article.tag]['color']}">
                         <img src="/HoneyNest/img/icon/${tags[article.tag]['img']}">
                     </div>
                     <div class="mainvisual article-text">
@@ -46,6 +48,31 @@ function visible_comment(){
     }
     catch {
         clearInterval(comment_interval);
+    }
+}
+
+// 最新記事を追加
+function add_new_article(articles, tags) {
+    const articles_cnt = Object.keys(articles).length;
+    for(let i = 0; i < articles_cnt && i < 11; i ++){
+        const article = articles[articles_cnt - 1 - i];
+        const write_html = `
+            <a href="${article.link}" class="new-article article">
+                <div class="tag-color">
+                    <img src="${article.thumbnail == '#' || '' ? '/HoneyNest/img/noimage.webp' : article.thumbnail}">
+                    <div class="new-article date">
+                        <span>${article.date}</span>
+                    </div>
+                    <div class="new-article tag" style="border-color:${tags[article.tag]['color']};">
+                        <span>${tags[article.tag]['name']}</span>
+                    </div>
+                </div>
+                <div class="new-article title">
+                    <h2>${article.title}</h2>
+                </div>
+            </a>
+        `
+        new_articles_obj.insertAdjacentHTML('beforeend', write_html);
     }
 }
 

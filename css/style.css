@@ -188,7 +188,15 @@ h1 {
     font-size: 1.6rem;
     color: initial;
     text-decoration: none;
+    padding-bottom: 1.6rem;
     margin: 1.6rem 0;
+    box-shadow: 0 0 5px 0 #000;
+    border-radius: 0 0 1.6rem 1.6rem;
+    transition: 0.3s;
+}
+.new-article.article:hover {
+    box-shadow: 0 0 10px 0 #000;
+    transition: 0.3s;
 }
 .new-article.article:nth-of-type(-n + 2) {
     width: 45%;
@@ -203,22 +211,31 @@ h1 {
 }
 .tag-color > img{
     display: block;
-    aspect-ratio: 16 / 9;
-    width: 95%;
-    margin: 2.5;
+    height: 100%;
 }
 .new-article.article:hover {
     color: initial;
 }
 
 .new-article.date {
-    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
     text-align: left;
 }
 .new-article.tag {
-    text-align: right;
+    display: inline;
+    position: absolute;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: solid 0.3rem transparent;
+    border-radius: 0.5rem;
+    top: 0;
+    margin: 0.5rem;
+    text-align: left;
+    font-weight: 900;
 }
 .new-article.title {
+    margin: 0 0.5rem;
     margin-top: 0.8rem;
     font-size: 1.2em;
     font-weight: 500;
@@ -234,9 +251,9 @@ h1 {
         flex-direction: column;
     }
     .Youtube-contents {
-        width: 100dvw;
+        width: 100svw;
         /* 4rem + 4rem = 8rem */
-        height: calc(40dvh - 4rem);
+        height: calc(40vh - 4rem);
     }
     .Youtube-contents-center {
         width: auto;
@@ -245,13 +262,25 @@ h1 {
     .Youtube-contents-center > iframe{
         width: auto;
         height: 100%;
-        max-width: 100dvw;
+        max-width: 100svw;
     }
     .top-articles {
         width: 100dvw;
-        height: calc(60dvh - 4rem);
+        height: calc(60svh - 4rem);
         border-radius: 1.6rem 1.6rem 0 0;
     }
     /* メインビジュアル */
+
+    /* 最新記事 */
+    .new-article.article {
+        width: 45%;
+    }
+    .new-article.article:first-of-type {
+        width: 100%;
+    }
+    .new-article.article:nth-of-type(2) {
+        font-size: 1.6rem;
+    }
+    /* 最新記事 */
 }
 /* スマホ */
