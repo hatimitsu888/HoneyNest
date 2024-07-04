@@ -1,11 +1,15 @@
 html {
     font-size: 10px;
-    font-family: "Open Sans", "M PLUS 2", sans-serif;
-    font-weight: 500;
     scrollbar-width: none;
 }
 html::-webkit-scrollbar {
     display: none;
+}
+
+body {
+    line-height: 1.5;
+    font-family: "Open Sans", "M PLUS 2", sans-serif;
+    font-weight: 500;
 }
 
 h1 {
@@ -15,7 +19,7 @@ h1 {
 
 /* メインビジュアル */
 #mainvisual {
-    box-shadow: 0 -2.5px 5px 5px #000;
+    border-bottom: solid 4rem #295ea4;
 }
 
 .mainvisual-flex {
@@ -135,7 +139,7 @@ h1 {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 75%;
+    width: 70%;
     margin: auto;
 }
 
@@ -154,7 +158,8 @@ h1 {
 
 /* 最新記事 */
 #articles {
-    margin: 15% 5%;
+    padding: 10% 5%;
+    background-color: #f6f6f6;
 }
 .section-title {
     text-align: center;
@@ -189,7 +194,8 @@ h1 {
     color: initial;
     text-decoration: none;
     padding-bottom: 1.6rem;
-    margin: 1.6rem 0;
+    margin: 3.2rem 0;
+    background-color: #fff;
     box-shadow: 0 0 5px 0 #000;
     border-radius: 0 0 1.6rem 1.6rem;
     transition: 0.3s;
