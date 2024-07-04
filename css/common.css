@@ -1,3 +1,31 @@
+/* 全体 */
+html {
+    font-size: 10px;
+    scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-family: "Open Sans", "M PLUS 2", sans-serif;
+    font-weight: 500;
+    background-color: #fffaed;
+}
+
+h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+}
+
+small {
+    font-size: 0.8em;
+}
+
+/* 全体 */
+
 /* ヘッダー */
 header {
     position: sticky;
@@ -27,12 +55,12 @@ header a:active{
 .header {
     display: flex;
     width: auto;
-    height: 8rem;
+    height: 80px;
     align-items: center;
 }
 .logo {
     display: block;
-    width: 30rem;
+    width: 30px;
     height: 100%;
     margin-left: 3%;
 }
@@ -50,10 +78,10 @@ header a:active{
     margin-left: auto;
     margin-right: 3%;
 }
-.header-link ul > {
+.header-link > nav > ul > {
     height: 100%;
 }
-.header-link > ul > li {
+.header-link > nav > ul > li {
     display: inline-block;
     text-align: center;
     width: 200px;
@@ -63,7 +91,7 @@ header a:active{
     border-right: solid 1.5px #888;
     cursor: pointer;
 }
-.header-link > ul > li:hover {
+.header-link > nav > ul > li:hover {
     background-color: #ffcb4f;
     transition: 0.3s;
 }
@@ -87,7 +115,7 @@ header a:active{
     border-right: solid 1.5px #888;
     transition: 0.2s;
 }
-.header-link > ul > li:hover > .dropdown-lists{
+.header-link > nav > ul > li:hover > .dropdown-lists{
     visibility: visible;
     margin-top: 10px;
     opacity: 1;
@@ -98,7 +126,7 @@ header a:active{
 }
 .dropdown-list a{
     display: block;
-    padding: 1.6rem 0;
+    padding: 16px 0;
 }
 .dropdown-list:hover {
     transition: 0.3s;
@@ -118,30 +146,77 @@ header a:active{
 }
 /* ヘッダー */
 
+/* フッター */
+footer {
+    background-color: #295ea4;
+    color: #ccc;
+    padding: 60px;
+    padding-bottom: 30px;
+}
+.copylight {
+    text-align: right;
+}
+/* フッター */
+
+/* トップに戻る */
+.page-top {
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+.hex {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(
+        50% 0,
+        0 20%,
+        0 80%,
+        50% 100%,
+        100% 80%,
+        100% 20%
+    );
+    background-color: #fff;
+}
+.hex::before {
+    content: '';
+    width: 110%;
+    height: 110%;
+    clip-path: polygon(
+        50% 0,
+        0 20%,
+        0 80%,
+        50% 100%,
+        100% 80%,
+        100% 20%
+    );
+    background-color: #000;
+}
+/* トップに戻る */
+
 /* スマホ */
 .hamburger {
     display: none;
     position: absolute;
-    width: 5rem;
-    height: 4rem;
+    width: 50px;
+    height: 40px;
     right: 5%;
 }
 .hamburger-icon,.hamburger-icon::before,.hamburger-icon::after {
     content: '';
     position: absolute;
     display: block;
-    width: 5rem;
-    height: 0.8rem;
-    border-radius: 1rem;
+    width: 50px;
+    height: 8px;
+    border-radius: 10px;
     background-color: #000;
     transition: 0.5s;
     top: 0;
 }
 .hamburger-icon::before {
-    top: 1.6rem;
+    top: 16px;
 }
 .hamburger-icon::after {
-    top: 3.2rem;
+    top: 32px;
 }
 @media screen and (max-width: 800px) {
     /* ヘッダー */
@@ -174,7 +249,7 @@ header a:active{
         transition: 0.5s;
     }
     .hamburger.open > .hamburger-icon{
-        top: 1.6rem;
+        top: 16px;
         transform: rotate(45deg);
     }
     .hamburger.open > .hamburger-icon::before{
@@ -198,19 +273,19 @@ header a:active{
         opacity: 1;
         transition: 0.5s;
     }
-    .header-link > ul{
+    .header-link > nav > ul{
         display: flex;
         flex-direction: column;
         margin-top: 10%;
     }
-    .header-link > ul > li{
+    .header-link > nav > ul > li{
         height: auto;
         border: none;
         padding: 0 20%;
         margin: 0 auto;
         margin-top: 20%;
     }
-    .header-link > ul > li:first-child{
+    .header-link > nav > ul > li:first-child{
         border-bottom: solid 1.5px #888;
         padding: 0 20%;
     }
@@ -223,10 +298,10 @@ header a:active{
         background-color: transparent;
         font-size: 2.6rem;
     }
-    .header-link > ul > li:hover {
+    .header-link > nav > ul > li:hover {
         background-color: initial;
     }
-    .header-link > ul > li:hover > .dropdown-lists {
+    .header-link > nav > ul > li:hover > .dropdown-lists {
         margin-top: 0;
     }
     .dropdown-list {
@@ -236,13 +311,13 @@ header a:active{
         margin: 8% 0;
     }
     .dropdown-list.Youtube {
-        border-left: solid 1rem #f00;
+        border-left: solid 10px #f00;
     }
     .dropdown-list.X {
-        border-left: solid 1rem #000;
+        border-left: solid 10px #000;
     }
     .dropdown-list.CraftersColoney {
-        border-left: solid 1rem #7fce00;
+        border-left: solid 10px #7fce00;
     }
     /* ヘッダー */
 }

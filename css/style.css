@@ -1,25 +1,6 @@
-html {
-    font-size: 10px;
-    scrollbar-width: none;
-}
-html::-webkit-scrollbar {
-    display: none;
-}
-
-body {
-    line-height: 1.5;
-    font-family: "Open Sans", "M PLUS 2", sans-serif;
-    font-weight: 500;
-}
-
-h1 {
-    font-size: 3.2rem;
-    font-weight: 900;
-}
-
 /* メインビジュアル */
 #mainvisual {
-    border-bottom: solid 4rem #295ea4;
+    border-bottom: solid 40px #295ea4;
 }
 
 .mainvisual-flex {
@@ -30,7 +11,7 @@ h1 {
 .Youtube-contents {
     position: relative;
     width: 60vw;
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 80px);
 }
 .Youtube-contents-center {
     position: absolute;
@@ -44,26 +25,26 @@ h1 {
     aspect-ratio: 16 / 9;
     width: 100%;
     height: auto;
-    max-height: calc(100vh - 8rem);
+    max-height: calc(100vh - 80px);
 }
 
 .top-articles {
     display: flex;
     flex-direction: column;
     width: 40vw;
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 80px);
     background-color: #fff;
-    border-radius: 1.6rem 0 0 0;
+    border-radius: 16px 0 0 0;
 }
 
 .top-articles > h1 {
     background-color: #ffcb4f;
-    padding: 1.6rem 1.6rem;
-    border-radius: 1.6rem 0 0 0;
+    padding: 16px 16px;
+    border-radius: 16px 0 0 0;
 }
 .line {
     width: 100%;
-    height: 0.5rem;
+    height: 5px;
     background-color: #00be70;
     margin: 0 auto;
 }
@@ -86,8 +67,7 @@ h1 {
 
 .mainvisual.article {
     position: relative;
-    margin: 1.6rem 1.6rem;
-    font-size: 1.6rem;
+    margin: 16px 16px;
 }
 .mainvisual.article::before {
     content: "";
@@ -98,7 +78,7 @@ h1 {
     height: 100%;
     z-index: 0;
     background-color: #ffcb4f;
-    border-left: solid 0.5rem #295ea4;
+    border-left: solid 5px #295ea4;
     transition: 0.2s;
 }
 .mainvisual.article:hover::before {
@@ -121,16 +101,16 @@ h1 {
 
 .mainvisual.article-link {
     display: block;
-    padding: 0.5rem 0.5rem;
+    padding: 5px 5px;
     text-decoration: initial;
     color: #000;
 }
 
 .mainvisual.tag-icon {
     position: absolute;
-    left: 1rem;
-    width: 4.8rem;
-    height: 4.8rem;
+    left: 10px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
 }
 .mainvisual.tag-icon > img {
@@ -146,12 +126,12 @@ h1 {
 .mainvisual.article-text {
     position: relative;
     z-index: 1;
-    margin: 0.2rem 0.8rem;
-    margin-left: 5.8rem;
-    padding-bottom: 0.8rem;
+    margin: 2px 8px;
+    margin-left: 58px;
+    padding-bottom: 8px;
 }
 .mainvisual.article-text > .date{
-    margin-bottom: 0.4rem;
+    margin-bottom: 4px;
 }
 /* メインビジュアル */
 
@@ -159,45 +139,43 @@ h1 {
 /* 最新記事 */
 #articles {
     padding: 10% 5%;
-    background-color: #f6f6f6;
 }
 .section-title {
     text-align: center;
 }
 .section-title h1 {
-    font-size: 4.8rem;
+    font-size: 48px;
     display: inline;
 }
 .section-line {
     background-color: #ffcb4f;
-    padding: 0.5rem 3.2rem;
+    padding: 5px 32px;
 }
 
 .new-articles {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 3.2rem;
+    margin-top: 32px;
 }
 .new-articles::after {
     content: '';
     display: block;
     width: 30%;
-    height: 30rem;
+    height: 1px;
 }
 
 .new-article.article {
     display: block;
     width: 30%;
     height: auto;
-    font-size: 1.6rem;
     color: initial;
     text-decoration: none;
-    padding-bottom: 1.6rem;
-    margin: 3.2rem 0;
+    padding-bottom: 16px;
+    margin: 32px 0;
     background-color: #fff;
     box-shadow: 0 0 5px 0 #000;
-    border-radius: 0 0 1.6rem 1.6rem;
+    border-radius: 0 0 16px 16px;
     transition: 0.3s;
 }
 .new-article.article:hover {
@@ -224,25 +202,25 @@ h1 {
 }
 
 .new-article.date {
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
+    margin-top: 5px;
+    margin-left: 5px;
     text-align: left;
 }
 .new-article.tag {
     display: inline;
     position: absolute;
-    padding: 0.5rem;
+    padding: 5px;
     background-color: rgba(255, 255, 255, 0.5);
-    border: solid 0.3rem transparent;
-    border-radius: 0.5rem;
+    border: solid 3px transparent;
+    border-radius: 5px;
     top: 0;
-    margin: 0.5rem;
+    margin: 5px;
     text-align: left;
     font-weight: 900;
 }
 .new-article.title {
-    margin: 0 0.5rem;
-    margin-top: 0.8rem;
+    margin: 0 5px;
+    margin-top: 8px;
     font-size: 1.2em;
     font-weight: 500;
     text-align: justify;
@@ -258,8 +236,7 @@ h1 {
     }
     .Youtube-contents {
         width: 100svw;
-        /* 4rem + 4rem = 8rem */
-        height: calc(40vh - 4rem);
+        height: calc(40vh - 40px);
     }
     .Youtube-contents-center {
         width: auto;
@@ -272,8 +249,8 @@ h1 {
     }
     .top-articles {
         width: 100dvw;
-        height: calc(60svh - 4rem);
-        border-radius: 1.6rem 1.6rem 0 0;
+        height: calc(60svh - 40px);
+        border-radius: 16px 16px 0 0;
     }
     /* メインビジュアル */
 
