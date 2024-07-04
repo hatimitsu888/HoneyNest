@@ -15,19 +15,19 @@ async function json_request() {
     add_comment(articles_json, tags_json);
 }
 
-// 最新記事を見えない状態で追加（最大5件）
+// 最新記事を見えない状態で追加
 function add_comment(articles, tags) {
-    for (let comment_count = Object.keys(articles).length - 5; comment_count < Object.keys(articles).length; comment_count ++){
+    for (let comment_count = 0; comment_count < Object.keys(articles).length; comment_count ++){
         const article = articles[comment_count];
         const write_html = `
-            <div class="article hidden">
-                <a class="article-link" href="${article.link}">
-                    <div class="tag-icon" style="background-color:${tags[article.tag]['bgcolor']}">
+            <div class="mainvisual article hidden">
+                <a class="mainvisual article-link" href="${article.link}">
+                    <div class="mainvisual tag-icon" style="background-color:${tags[article.tag]['bgcolor']}">
                         <img src="/HoneyNest/img/icon/${tags[article.tag]['img']}">
                     </div>
-                    <div class="article-text">
-                        <div class="date">${article.date}</div>
-                        <p class="title">${article.title}</p>
+                    <div class="mainvisual article-text">
+                        <div class="mainvisual date">${article.date}</div>
+                        <p class="mainvisual title">${article.title}</p>
                     </div>
                 </a>
             </div>
