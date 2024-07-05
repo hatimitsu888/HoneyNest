@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@500;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link href="/HoneyNest/css/common.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+
+    <title>はちみつの巣 - ブログ</title>
+</head>
+
+<body>
+    <header>
+        <ul class="header">
+            <li class="logo">
+                <h1>
+                    <a href="/HoneyNest/"><img src="/HoneyNest/img/logo.webp"></a>
+                </h1>
+            </li>
+            <div class="hamburger"><span class="hamburger-icon"></span></div>
+            <li class="header-link">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/HoneyNest/blog/index.html">BLOG</a>
+                        </li>
+                        <li class="link-button">
+                            LINK ▼
+                            <ul class="dropdown-lists">
+                                <li class="dropdown-list Youtube"><a href="https://www.youtube.com/@Hatimitsu" target="_blank" rel="noreferrer noopener">Youtube</a></li>
+                                <li class="dropdown-list X"><a href="https://x.com/Hatimitsu83yg" target="_blank" rel="noreferrer noopener">X</a></li>
+                                <li class="dropdown-list Twitch"><a href="https://www.twitch.tv/hatimitsu83" target="_blank" rel="noreferrer noopener">Twitch</a></li>
+                                <li class="dropdown-list CraftersColoney"><a href="https://minecraft-mcworld.com/author/032204c869ca56e9a42e983b0ddb352361320f28/" target="_blank" rel="noreferrer noopener">クラフターズコロニー</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <section id="articles">
+            <details class="sarch sort-wrap">
+                <summary class="sarch-title sort-title detail-open-btn">並べ替え</summary>
+                <div class="sarch-condition sort-date">
+                    <ul class="sarch-btns sort">
+                        <li class="selected">新しい</li>
+                        <li>古い</li>
+                    </ul>
+                </div>
+            </details>
+            <details class="sarch filter-wrap">
+                <summary class="sarch-title filter-title detail-open-btn">タグで絞り込み</summary>
+                <div class="sarch-condition filter-tag">
+                    <ul class="sarch-btns filter-all">
+                        <li class="tag-all">すべてのタグ</li>
+                        <li class="tag-remove">すべて外す</li>
+                    </ul>
+                    <ul class="sarch-btns filter">
+                        <li class="tag-blog selected">ブログ</li>
+                        <li class="tag-game selected">ゲーム</li>
+                        <li class="tag-video selected">動画関連</li>
+                    </ul>
+                </details>
+            </div>
+
+            <div class="articles-area"></div>
+
+        </section>
+        
+    </main>
+
+    <footer>
+        <a href="#" class="page-top">
+            <div class="hex"></div>
+            <div class="arrow"></div>
+        </a>
+        <div class="footer-link">
+            <ul class="footer-link-wrap">
+                <li><a href="https://www.youtube.com/@Hatimitsu" target="_blank" rel="noreferrer noopener">Youtube</a></li>
+                <li><a href="https://x.com/Hatimitsu83yg" target="_blank" rel="noreferrer noopener">X</a></li>
+                <li><a href="https://www.twitch.tv/hatimitsu83" target="_blank" rel="noreferrer noopener">Twitch</a></li>
+                <li><a href="https://minecraft-mcworld.com/author/032204c869ca56e9a42e983b0ddb352361320f28/" target="_blank" rel="noreferrer noopener">クラフターズコロニー</a></li>
+            </ul>
+        </div>
+        <p class="copylight"><small>&copy; 2024 はちみつ</small></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/HoneyNest/js/common.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
