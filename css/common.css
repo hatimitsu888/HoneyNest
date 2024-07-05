@@ -20,6 +20,10 @@ small {
     font-size: 0.8em;
 }
 
+a:visited{
+    color: initial;
+}
+
 /* 全体 */
 
 /* ヘッダー */
@@ -39,9 +43,6 @@ header a{
     text-decoration: initial;
 }
 header a:hover{
-    color: initial;
-}
-header a:visited{
     color: initial;
 }
 header a:active{
@@ -137,6 +138,9 @@ header a:active{
 .dropdown-list.X:hover {
     background-color: #000;
 }
+.dropdown-list.Twitch:hover {
+    background-color: #9147ff;
+}
 .dropdown-list.CraftersColoney:hover {
     background-color: #7fce00;
 }
@@ -150,7 +154,27 @@ footer {
     padding-bottom: 30px;
 }
 .copylight {
-    text-align: right;
+    text-align: center;
+}
+.footer-link {
+    margin-bottom: 15px;
+}
+.footer-link-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+.footer-link li {
+    display: inline;
+    padding: 0 20px;
+    margin: 10px 0;
+}
+.footer-link a {
+    color: #fff;
+}
+.footer-link a:hover {
+    color: #ccc;
 }
 /* フッター */
 
@@ -245,7 +269,7 @@ footer {
 @media screen and (max-width: 800px) {
     /* ヘッダー */
     header {
-        font-size: 6.4rem;
+        font-size: 5rem;
     }
     header::after {
         content: '';
@@ -300,14 +324,17 @@ footer {
     .header-link > nav > ul{
         display: flex;
         flex-direction: column;
-        margin-top: 10%;
+        margin-top: 20%;
     }
     .header-link > nav > ul > li{
         height: auto;
         border: none;
         padding: 0 20%;
         margin: 0 auto;
-        margin-top: 20%;
+        margin-top: 10%;
+    }
+    .link-button {
+        text-align: left;
     }
     .header-link > nav > ul > li:first-child{
         border-bottom: solid 1.5px #888;
@@ -334,15 +361,30 @@ footer {
         padding-left: 10%;
         margin: 8% 0;
     }
+    .dropdown-list a {
+        padding: 10px;
+    }
     .dropdown-list.Youtube {
         border-left: solid 10px #f00;
     }
     .dropdown-list.X {
         border-left: solid 10px #000;
     }
+    .dropdown-list.Twitch {
+        border-left: solid 10px #9147ff;
+    }
     .dropdown-list.CraftersColoney {
         border-left: solid 10px #7fce00;
     }
     /* ヘッダー */
+
+    /* トップに戻る */
+    .page-top {
+        right: 5%;
+        bottom: 10%;
+        width: 80px;
+        height: 80px;
+    }
+    /* トップに戻る */
 }
 /* スマホ */

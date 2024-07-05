@@ -58,17 +58,17 @@ function add_new_article(articles, tags) {
         const article = articles[articles_cnt - 1 - i];
         const write_html = `
             <a href="${article.link}" class="new-article article">
-                <div class="tag-color">
+                <div class="new-article thumbnail">
                     <img src="${article.thumbnail == '#' || '' ? '/HoneyNest/img/noimage.webp' : article.thumbnail}">
-                    <div class="new-article date">
-                        <span>${article.date}</span>
-                    </div>
                     <div class="new-article tag" style="border-color:${tags[article.tag]['color']};">
                         <span>${tags[article.tag]['name']}</span>
                     </div>
                 </div>
                 <div class="new-article title">
                     <h2>${article.title}</h2>
+                </div>
+                <div class="new-article date">
+                    <span>${article.date}</span>
                 </div>
             </a>
         `

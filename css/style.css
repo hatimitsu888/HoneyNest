@@ -150,7 +150,7 @@ html::-webkit-scrollbar {
 
 /* 最新記事 */
 #articles {
-    padding: 10% 5%;
+    padding: 10% 10%;
 }
 .section-title {
     text-align: center;
@@ -199,13 +199,13 @@ html::-webkit-scrollbar {
     font-size: 2rem;
 }
 
-.tag-color {
+.new-article.thumbnail {
     display: block;
     aspect-ratio: 16 / 9;
     width: 100%;
     position: relative;
 }
-.tag-color > img{
+.new-article.thumbnail > img{
     display: block;
     height: 100%;
 }
@@ -215,8 +215,8 @@ html::-webkit-scrollbar {
 
 .new-article.date {
     margin-top: 5px;
-    margin-left: 5px;
-    text-align: left;
+    margin-right: 5%;
+    text-align: right;
 }
 .new-article.tag {
     display: inline;
@@ -231,9 +231,8 @@ html::-webkit-scrollbar {
     font-weight: 900;
 }
 .new-article.title {
-    margin: 0 5px;
+    margin: 0 5%;
     margin-top: 8px;
-    font-size: 1.2em;
     font-weight: 500;
     text-align: justify;
 }
@@ -275,6 +274,9 @@ html::-webkit-scrollbar {
     }
     .new-article.article:nth-of-type(2) {
         font-size: 1.6rem;
+    }
+    .new-article.tag {
+        font-size: 0.8em;
     }
     /* 最新記事 */
 }
