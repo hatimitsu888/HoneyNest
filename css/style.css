@@ -1,3 +1,5 @@
+/* https://www.colorsupplyyy.com/s/dOJx7KDwqp */
+
 /* 全体 */
 html {
     scrollbar-width: none;
@@ -8,7 +10,7 @@ html::-webkit-scrollbar {
 
 /* メインビジュアル */
 #mainvisual {
-    border-bottom: solid 40px #295ea4;
+    border-bottom: solid 40px var(--blue);
 }
 
 .mainvisual-flex {
@@ -46,14 +48,14 @@ html::-webkit-scrollbar {
 }
 
 .top-articles > h1 {
-    background-color: #ffcb4f;
+    background-color: var(--yellow);
     padding: 16px 16px;
     border-radius: 16px 0 0 0;
 }
 .line {
     width: 100%;
     height: 5px;
-    background-color: #00be70;
+    background-color: var(--green);
     margin: 0 auto;
 }
 
@@ -88,8 +90,8 @@ html::-webkit-scrollbar {
     width: 0%;
     height: 100%;
     z-index: 0;
-    background-color: #ffcb4f;
-    border-left: solid 5px #295ea4;
+    background-color: var(--yellow);
+    border-left: solid 5px var(--blue);
     transition: 0.2s;
 }
 .mainvisual.article:hover::before {
@@ -160,7 +162,7 @@ html::-webkit-scrollbar {
     display: inline;
 }
 .section-line {
-    background-color: #ffcb4f;
+    background-color: var(--yellow);
     padding: 5px 32px;
 }
 
@@ -203,12 +205,22 @@ html::-webkit-scrollbar {
     display: block;
     aspect-ratio: 16 / 9;
     width: 100%;
+    overflow: hidden;
     position: relative;
 }
 .new-article.thumbnail > img{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: block;
     height: 100%;
+    transition: 0.3s;
 }
+.new-article.article:hover .thumbnail img {
+    height: 110%;
+    transition: 0.3s;
+} 
 .new-article.article:hover {
     color: initial;
 }

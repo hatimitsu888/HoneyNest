@@ -1,3 +1,17 @@
+/* https://www.colorsupplyyy.com/s/dOJx7KDwqp */
+
+/* 変数 */
+:root {
+    /* 色 */
+    --background: #fffaed;
+    --select: #f0f0f0;
+    --gray: #f8f8f8;
+    --yellow: #ffcb4f;
+    --blue: #295ea4;
+    --green: #00be70;
+    --red: #fa5a5a;
+}
+
 /* 全体 */
 html {
     font-size: 10px;
@@ -8,7 +22,7 @@ body {
     line-height: 1.5;
     font-family: "Open Sans", "M PLUS 2", sans-serif;
     font-weight: 500;
-    background-color: #fffaed;
+    background-color: var(--background);
 }
 
 h1 {
@@ -87,9 +101,10 @@ header a:active{
     border-left: solid 1.5px #888;
     border-right: solid 1.5px #888;
     cursor: pointer;
+    user-select: none;
 }
 .header-link > nav > ul > li:hover {
-    background-color: #ffcb4f;
+    background-color: var(--yellow);
     transition: 0.3s;
 }
 
@@ -148,7 +163,7 @@ header a:active{
 
 /* フッター */
 footer {
-    background-color: #295ea4;
+    background-color: var(--blue);
     color: #ccc;
     padding: 60px;
     padding-bottom: 30px;
@@ -211,7 +226,7 @@ footer {
         5% 23%,
         50% 5%
     );
-    background-color: #ffcb4f;
+    background-color: var(--yellow);
     opacity: 0.8;
 
     transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
