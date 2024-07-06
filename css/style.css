@@ -248,6 +248,27 @@ html::-webkit-scrollbar {
     font-weight: 500;
     text-align: justify;
 }
+
+.blog-link-wrap {
+    margin: 32px 0;
+    text-align: center;
+}
+.blog-link {
+    display: inline-block;
+    padding: 16px 10%;
+    background-color: var(--yellow);
+    border-radius: 16px;
+    box-sizing: border-box;
+    font-size: 2.4rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 0 5px #000;
+    transition: 0.3s;
+}
+.blog-link:hover {
+    box-shadow: 0 0 10px #000;
+    transition: 0.3s;
+}
 /* 最新記事 */
 
 
