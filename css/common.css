@@ -256,35 +256,6 @@ footer {
 }
 /* トップに戻る */
 
-
-/* 本文 */
-.breadcrumbs a,p{
-    display: inline;
-    margin-right: 8px;
-}
-.breadcrumbs a:hover {
-    color: var(--red);
-}
-
-h1.title {
-    position: relative;
-    margin: 32px 0;
-    margin-top: 64px;
-    margin-left: 16px;
-}
-h1.title::before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 8px;
-    height: 32px;
-    background-color: var(--yellow);
-    left: -16px;
-    top: 8px;
-}
-/* 本文 */
-
-
 /* スマホ */
 .hamburger {
     display: none;
