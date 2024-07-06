@@ -1,7 +1,29 @@
 /* https://www.colorsupplyyy.com/s/dOJx7KDwqp */
 
+.breadcrumbs a,p{
+    display: inline;
+    margin-right: 8px;
+}
+
+#articles h1 {
+    position: relative;
+    margin: 32px 0;
+    margin-bottom: 80px;
+    margin-left: 16px;
+}
+#articles h1::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 8px;
+    height: 32px;
+    background-color: var(--yellow);
+    left: -16px;
+    top: 8px;
+}
+
 #articles {
-    width: calc(70vw - 20%);
+    width: calc(75vw - 20%);
     margin: 5%;
     background-color: #fff;
     padding: 5%;
@@ -17,7 +39,7 @@
 }
 .sarch-title {
     display: block;
-    font-size: 3.2rem;
+    font-size: 2.4rem;
     font-weight: 900;
     padding-left: 50px;
     background-color: var(--yellow);
@@ -34,8 +56,8 @@
     left: 5px;
     top: 5px;
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     background-color: rgba(0, 0, 0, 0.8);
 }
 /* 左のアイコン */
@@ -149,6 +171,7 @@
 .articles-area {
     width: 100%;
     margin: 100px 0;
+    margin-top: 0;
 }
 
 .article {
@@ -206,6 +229,57 @@
 }
 /* 記事 */
 
+/* ページネーション */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 15%;
+    margin-top: 100px;
+    text-align: center;
+}
+.pagination li {
+    position: relative;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 0 3px #000;
+    cursor: pointer;
+    user-select: none;
+}
+.pagination li:first-of-type::after,li:last-of-type::after {
+    content: '';
+    width: 40%;
+    height: 40%;
+    margin: auto;
+    background-color: #000;
+    clip-path: polygon(
+        100% 0,
+        0 50%,
+        100% 100%
+    );
+}
+.pagination li:last-of-type::after {
+    rotate: 180deg;
+}
+.pagination li span {
+    margin: auto;
+}
+.pagination .selected {
+    color: #000;
+    background-color: var(--yellow);
+}
+.pagination li:hover {
+    filter: brightness(0.8);
+}
+.pagination .hidden {
+    display: none;
+}
+
+/* ページネーション */
+
 /* スマホ */
 @media screen and (max-width: 800px) {
     #articles {
@@ -213,6 +287,34 @@
     }
     .sarch {
         font-size: 1.6rem;
+    }
+
+    .article {
+        flex-direction: column;
+        height: auto;
+        margin: 60px 0;
+    }
+    .thumbnail {
+        height: auto;
+        width: 100%;
+    }
+    .thumbnail img {
+        height: auto;
+        width: 100%;
+    }
+    .article:hover img {
+        height: auto;
+        width: 110%;
+    }
+
+    .article-text {
+        margin: 0;
+        padding-bottom: 32px;
+    }
+
+    .pagination {
+        width: 100%;
+        margin: 0;
     }
 }
 /* スマホ */

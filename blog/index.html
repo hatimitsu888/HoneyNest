@@ -48,12 +48,17 @@
 
     <main>
         <section id="articles">
+            <div class="breadcrumbs">
+                <a href="/HoneyNest/">トップ ></a><p>BLOG</p>
+            </div>
+            <h1>ブログ</h1>
+
             <details class="sarch sort-wrap">
                 <summary class="sarch-title sort-title detail-open-btn">並べ替え</summary>
                 <div class="sarch-condition sort-date">
                     <ul class="sarch-btns sort">
-                        <li class="selected">新しい</li>
-                        <li>古い</li>
+                        <li data-new="1" class="selected">新しい</li>
+                        <li data-new="0">古い</li>
                     </ul>
                 </div>
             </details>
@@ -64,15 +69,22 @@
                         <li class="tag-all">すべてのタグ</li>
                         <li class="tag-remove">すべて外す</li>
                     </ul>
-                    <ul class="sarch-btns filter">
-                        <li class="tag-blog selected">ブログ</li>
-                        <li class="tag-game selected">ゲーム</li>
-                        <li class="tag-video selected">動画関連</li>
-                    </ul>
+                    <ul class="sarch-btns filter"></ul>
                 </details>
             </div>
 
             <div class="articles-area"></div>
+            <ul class="pagination">
+                <li data-page="back"></li>
+                <li data-page="0" class="page-num selected"><span>1</span></li>
+                <span class="period">...</span>
+                <li data-page="1" data-pos="0" class="page-num"><span>2</span></li>
+                <li data-page="2" data-pos="1" class="page-num"><span>3</span></li>
+                <li data-page="3" data-pos="2" class="page-num"><span>4</span></li>
+                <span class="period">...</span>
+                <li data-page="5" class="page-num"><span>5</span></li>
+                <li data-page="next"></li>
+            </ul>
 
         </section>
         
