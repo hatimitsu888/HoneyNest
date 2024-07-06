@@ -1,27 +1,5 @@
 /* https://www.colorsupplyyy.com/s/dOJx7KDwqp */
 
-.breadcrumbs a,p{
-    display: inline;
-    margin-right: 8px;
-}
-
-#articles h1 {
-    position: relative;
-    margin: 32px 0;
-    margin-bottom: 80px;
-    margin-left: 16px;
-}
-#articles h1::before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 8px;
-    height: 32px;
-    background-color: var(--yellow);
-    left: -16px;
-    top: 8px;
-}
-
 #articles {
     width: calc(75vw - 20%);
     margin: 5%;
