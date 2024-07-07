@@ -49,6 +49,7 @@ header {
     font-weight: 800;
 }
 header a{
+    display: block;
     color: initial;
     text-decoration: initial;
 }
@@ -76,6 +77,9 @@ header a:active{
     width: auto;
     height: 100%;
     text-align: center;
+}
+.logo a {
+    display: initial;
 }
 .logo img {
     height: 100%;
