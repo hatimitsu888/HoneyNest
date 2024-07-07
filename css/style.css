@@ -55,7 +55,7 @@ html::-webkit-scrollbar {
 .line {
     width: 100%;
     height: 5px;
-    background-color: var(--green);
+    background-color: var(--blue);
     margin: 0 auto;
 }
 
