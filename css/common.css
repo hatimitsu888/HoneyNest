@@ -165,7 +165,9 @@ footer {
     padding-bottom: 30px;
 }
 .copylight {
+    display: block;
     text-align: center;
+    color: #fff;
 }
 .footer-link {
     margin-bottom: 15px;
