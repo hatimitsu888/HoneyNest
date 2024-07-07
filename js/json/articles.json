@@ -1,7 +1,7 @@
 [
     {
-        "link"      : "/HoneyNest/blog/date/24/7/hello",
-        "thumbnail" : "/HoneyNest/blog/date/24/7/hello/img/thumbnail.webp",
+        "link"      : "/blog/date/24/7/hello",
+        "thumbnail" : "/blog/date/24/7/hello/img/thumbnail.webp",
         "title"     : "新しいブログにやってきた！",
         "tag"       : "blog",
         "date"      : "2024/07/07"

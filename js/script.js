@@ -25,7 +25,7 @@ function add_comment(articles, tags) {
             <div class="mainvisual article hidden">
                 <a class="mainvisual article-link" href="${article.link}">
                     <div class="mainvisual tag-icon" style="background-color:${tags[article.tag]['color']}">
-                        <img src="/HoneyNest/img/icon/${tags[article.tag]['img']}">
+                        <img src="/img/icon/${tags[article.tag]['img']}">
                     </div>
                     <div class="mainvisual article-text">
                         <div class="mainvisual date">${article.date}</div>
@@ -59,7 +59,7 @@ function add_new_article(articles, tags) {
         const write_html = `
             <a href="${article.link}" class="new-article article">
                 <div class="new-article thumbnail">
-                    <img src="${article.thumbnail == '#' || '' ? '/HoneyNest/img/noimage.webp' : article.thumbnail}">
+                    <img src="${article.thumbnail == '#' || '' ? '/img/noimage.webp' : article.thumbnail}">
                     <div class="new-article tag" style="border-color:${tags[article.tag]['color']};">
                         <span>${tags[article.tag]['name']}</span>
                     </div>

@@ -1,7 +1,7 @@
 $(function() {
     // JSONファイルを表示
-    const tags_json = '/HoneyNest/js/json/tags.json';
-    const articles_json = '/HoneyNest/js/json/articles.json';
+    const tags_json = '/js/json/tags.json';
+    const articles_json = '/js/json/articles.json';
     let tags;
     let articles_area;
     let articles_data;
@@ -292,7 +292,7 @@ $(function() {
             const write_data =`
                 <a class="article" href="${article.link}">
                     <div class="thumbnail">
-                        <img src="${article.thumbnail == '#' || '' ? '/HoneyNest/img/noimage.webp' : article.thumbnail}">
+                        <img src="${article.thumbnail == '#' || '' ? '/img/noimage.webp' : article.thumbnail}">
                     </div>
                     <div class="article-text">
                         <div class="article-title">${article.title}</div>
