@@ -4,10 +4,15 @@
 }
 
 /*---------- 本文 ----------*/
+main {
+    display: flex;
+}
+
 #blog {
     position: relative;
     width: calc(75vw - 20%);
     margin: 5%;
+    margin-right: 2.5%;
     background-color: #fff;
     padding: 5%;
 }
@@ -68,6 +73,39 @@ main h1 {
     font-weight: 900;
 }
 
+/* 目次 */
+.toc {
+    background-color: var(--gray);
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 32px;
+    padding: 5%;
+}
+.toc ol {
+    list-style: decimal;
+    margin-left: 32px;
+}
+.toc a {
+    text-decoration: none;
+}
+
+/* サイドバー */
+#sidebar {
+    position: relative;
+    display: block;
+    width: 25vw;
+    margin-top: 5%;
+    margin-right: 5%;
+}
+.toc.right {
+    position: fixed;
+    display: block;
+    width: 19.2%;
+    margin: 0;
+    padding: 2.5%;
+    background-color: #fff;
+}
+
 /* 見出し1 */
 main h2 {
     font-size: 2.4rem;
@@ -124,6 +162,14 @@ main s[data-s="0"] {
 @media screen and (max-width: 800px) {
     #blog {
         width: calc(100vw - 20%);
+    }
+
+    .toc {
+        width: 100%;
+    }
+
+    #sidebar {
+        display: none;
     }
 }
 /*---------- スマホ ----------*/
