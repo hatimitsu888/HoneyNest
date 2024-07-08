@@ -137,8 +137,10 @@ header a:active{
     border-bottom: solid 1px #888;
 }
 .dropdown-list a{
+    position: relative;
     display: block;
     padding: 16px 0;
+    transform: translate(0, 0);
 }
 .dropdown-list:hover {
     transition: 0.3s;
@@ -149,6 +151,29 @@ header a:active{
 }
 .dropdown-list.Youtube:hover {
     background-color: #f00;
+}
+.dropdown-list.TikTok:hover {
+    background-color: #000;
+}
+.dropdown-list.TikTok:hover a {
+    color: #25F4EE;
+    transform: translate(-2px, -2px);
+}
+.dropdown-list.TikTok a::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 16px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    color: #FE2C55;
+    transform: translate(0, 0);
+    mix-blend-mode: screen;
+}
+.dropdown-list.TikTok:hover a::before {
+    transform: translate(2px, 2px);
+    opacity: 1;
+    transition: 0.3s;
 }
 .dropdown-list.X:hover {
     background-color: #000;
@@ -376,13 +401,20 @@ footer {
         border: none;
         text-align: left;
         padding-left: 10%;
-        margin: 8% 0;
+        margin: 20px 0;
     }
     .dropdown-list a {
-        padding: 10px;
+        padding: 4px;
     }
     .dropdown-list.Youtube {
         border-left: solid 10px #f00;
+    }
+    .dropdown-list.TikTok {
+        border-left: solid 10px #000;
+    }
+    .dropdown-list.TikTok a::before {
+        top: 4px;
+        left: 4px;
     }
     .dropdown-list.X {
         border-left: solid 10px #000;
