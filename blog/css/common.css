@@ -191,7 +191,7 @@ main s[data-s="0"] {
     }
 
     .toc {
-        width: 100%;
+        width: auto;
     }
 
     #sidebar {
