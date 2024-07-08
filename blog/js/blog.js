@@ -8,7 +8,7 @@ $(function() {
         $(toc_area).append(write_toc);
     });
 
-    // 目次をスクロール
+    // 目次をクリック
     $('main').on('click', '.toc a', function() {
         // スクロール速度
         const speed = 500;
