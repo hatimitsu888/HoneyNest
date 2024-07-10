@@ -24,7 +24,7 @@
     
     <title>タイトル</title>
     <meta property="og:title" content="タイトル">
-    <meta property="og:url" content="https://htmt888.com/blog/date/サムネイル">
+    <meta property="og:url" content="https://htmt888.com/blog/date/記事のurl">
     <meta property="og:image" content="https://htmt888.com/blog/date/サムネイル">
     <meta property="og:description" content="説明">
     <meta name="description" content="説明">
