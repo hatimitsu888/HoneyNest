@@ -376,9 +376,10 @@ footer {
         margin-top: 20%;
     }
     .header-link > nav > ul > li{
+        display: block;
+        width: 80vw;
         height: auto;
         border: none;
-        padding: 0 20%;
         margin: 0 auto;
         margin-top: 10%;
     }
@@ -387,7 +388,6 @@ footer {
     }
     .header-link > nav > ul > li:first-child{
         border-bottom: solid 1.5px #888;
-        padding: 0 20%;
     }
     .dropdown-lists {
         visibility: unset;
