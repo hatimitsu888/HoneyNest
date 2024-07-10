@@ -5,5 +5,12 @@
         "title"     : "新しいブログにやってきた！",
         "tag"       : "blog",
         "date"      : "2024/07/07"
+    },
+    {
+        "link"      : "/blog/date/24/7/hot",
+        "thumbnail" : "/blog/date/24/7/hot/img/thumbnail.webp",
+        "title"     : "あつーーーーーーーーーーい！！！",
+        "tag"       : "blog",
+        "date"      : "2024/07/10"
     }
 ]
