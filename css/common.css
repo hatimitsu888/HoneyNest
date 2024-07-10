@@ -200,6 +200,7 @@ footer {
 }
 .footer-link {
     margin-bottom: 15px;
+    text-align: center;
 }
 .footer-link-wrap {
     display: flex;
@@ -217,6 +218,12 @@ footer {
 }
 .footer-link a:hover {
     color: #ccc;
+}
+
+.privacy-policy {
+    display: block;
+    margin: 32px 0;
+    margin-bottom: 64px;
 }
 /* フッター */
 
