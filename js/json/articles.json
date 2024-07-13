@@ -12,5 +12,12 @@
         "title"     : "あつーーーーーーーーーーい！！！",
         "tag"       : "blog",
         "date"      : "2024/07/10"
+    },
+    {
+        "link"      : "/blog/date/24/7/ymm4-regex",
+        "thumbnail" : "/blog/date/24/7/ymm4-regex/img/thumbnail.webp",
+        "title"     : "【YMM4】正規表現でより便利な発音辞書を作ろう！",
+        "tag"       : "video",
+        "date"      : "2024/07/13"
     }
 ]
