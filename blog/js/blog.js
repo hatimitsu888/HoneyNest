@@ -3,8 +3,11 @@ $(function() {
     const toc_area = $('.toc ol');
     $('#blog h2').each(function() {
         const title = $(this).text();
-        const id = $(this).attr('id');
-        const write_toc = `<a href="#${id}"><li>${title}</li></a>`;
+        // タグを付ける
+        $(this).removeAttr('id');
+        $(this).attr('id', title);
+        // 目次を作成
+        const write_toc = `<a href="#${title}"><li>${title}</li></a>`;
         $(toc_area).append(write_toc);
     });
 
