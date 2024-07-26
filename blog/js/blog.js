@@ -28,4 +28,23 @@ $(function() {
         // 移動
         $('body, html').animate({ scrollTop: pos }, speed);
     });
+
+    // 画像をクリック
+    const img = $('#blog img');
+    const modal = $('#modal');
+    $(img).click(function(){
+        $(modal).removeClass('hidden');
+        const url = $(this).attr('src');
+        const alt = $(this).attr('alt');
+        const a = $(modal).find('a');
+        const img = $(modal).find('img');
+        $(img).attr('src', url);
+        $(img).attr('alt', alt);
+        $(a).attr('href', url);
+        $(a).text(alt);
+    });
+
+    $(modal).click(function(){
+        $(modal).addClass('hidden');
+    });
 });

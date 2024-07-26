@@ -21,6 +21,7 @@ main {
 #blog img {
     width: 100%;
     margin: 16px 0;
+    margin-bottom: 0;
 }
 
 /* パンくずリスト */
@@ -158,6 +159,7 @@ main h2::before {
 main p {
     display: block;
     margin: 64px 0;
+    margin-bottom: 128px;
     font-weight: 400;
 }
 main a {
@@ -184,10 +186,65 @@ main s[data-s="0"] {
 
 /*---------- 本文 ----------*/
 
+/*---------- モーダル ----------*/
+#modal {
+    position: fixed;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+    opacity: 1;
+    transition: 0.3s;
+}
+#modal.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+.modal-img {
+    position: relative;
+    display: block;
+    width: 80%;
+    height: 70%;
+    margin: auto;
+    top: 5%;
+}
+.modal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.3s;
+}
+#modal a {
+    display: block;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    bottom: -10%;
+    font-size: 24px;
+    font-weight: 900;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 0 10%;
+    transition: 0.3s;
+}
+#modal a::after {
+    content: '　';
+    background-image: url('/blog/img/blank.svg');
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: 2px 6px;
+}
+#modal a:hover {
+    background-color: rgba(250, 90, 90, 0.75);
+}
+/*---------- モーダル ----------*/
+
+
 /*---------- スマホ ----------*/
 @media screen and (max-width: 800px) {
     #blog {
-        width: calc(100vw - 20%);
+        width: 100vw;
+        margin: 50px 0;
     }
 
     .toc {
@@ -196,6 +253,15 @@ main s[data-s="0"] {
 
     #sidebar {
         display: none;
+    }
+
+    .modal-img {
+        width: 100%;
+        height: 60%;
+    }
+    #modal a {
+        padding: 0 2%;
+        font-size: 20px;
     }
 }
 /*---------- スマホ ----------*/
