@@ -43,6 +43,11 @@ main h1 {
     border-bottom: solid 3px var(--yellow);
 }
 
+/* PR */
+.pr {
+    color: var(--red);
+}
+
 /* 日付とタグ */
 .info {
     position: relative;
@@ -186,6 +191,45 @@ main s[data-s="0"] {
 
 /*---------- 本文 ----------*/
 
+/*---------- PRリンク ----------*/
+.pr-link {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background-color: var(--gray);
+    margin-bottom: 32px;
+}
+.pr-img-wrap {
+    display: block;
+    width: 160px;
+    height: 160px;
+    background-color: #fff;
+    margin: 10px;
+    padding: 10px;
+}
+.pr-img {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.pr-text {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    margin: 10px;
+}
+.pr-link-text {
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    bottom: 16px;
+    right: 0;
+    color: #000;
+}
+/*---------- PRリンク ----------*/
+
 /*---------- モーダル ----------*/
 #modal {
     position: fixed;
@@ -263,5 +307,15 @@ main s[data-s="0"] {
         padding: 0 2%;
         font-size: 20px;
     }
+
+    /*---------- PRリンク ----------*/
+    .pr-link {
+        flex-direction: column;
+        height: 400px;
+    }
+    .pr-img-wrap {
+        width: auto;
+    }
+    /*---------- PRリンク ----------*/
 }
 /*---------- スマホ ----------*/
