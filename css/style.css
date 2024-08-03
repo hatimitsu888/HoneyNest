@@ -186,7 +186,7 @@ html::-webkit-scrollbar {
     height: auto;
     color: initial;
     text-decoration: none;
-    padding-bottom: 48px;
+    padding-bottom: 64px;
     margin: 32px 0;
     background-color: #fff;
     box-shadow: 0 0 5px 0 #000;
@@ -200,6 +200,7 @@ html::-webkit-scrollbar {
 .new-article.article:nth-of-type(-n + 2) {
     width: 45%;
     font-size: 2rem;
+    padding-bottom: 48px;
 }
 
 .new-article.thumbnail {
@@ -230,7 +231,7 @@ html::-webkit-scrollbar {
     position: absolute;
     margin-top: 5px;
     margin-right: 5%;
-    bottom: 8px;
+    bottom: 16px;
     right: 0;
 }
 .new-article.tag {
@@ -311,6 +312,7 @@ html::-webkit-scrollbar {
     }
     .new-article.article:nth-of-type(2) {
         font-size: 1.6rem;
+        padding-bottom: 48px;
     }
     .new-article.tag {
         font-size: 0.8em;
