@@ -180,12 +180,13 @@ html::-webkit-scrollbar {
 }
 
 .new-article.article {
+    position: relative;
     display: block;
     width: 30%;
     height: auto;
     color: initial;
     text-decoration: none;
-    padding-bottom: 16px;
+    padding-bottom: 48px;
     margin: 32px 0;
     background-color: #fff;
     box-shadow: 0 0 5px 0 #000;
@@ -226,9 +227,11 @@ html::-webkit-scrollbar {
 }
 
 .new-article.date {
+    position: absolute;
     margin-top: 5px;
     margin-right: 5%;
-    text-align: right;
+    bottom: 8px;
+    right: 0;
 }
 .new-article.tag {
     display: inline;
