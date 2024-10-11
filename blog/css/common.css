@@ -164,8 +164,8 @@ main h2::before {
 /* 本文 */
 main p {
     display: block;
-    margin: 64px 0;
-    margin-bottom: 128px;
+    margin: 48px 0;
+    margin-bottom: 64px;
     font-weight: 400;
 }
 main a {
