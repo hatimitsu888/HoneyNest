@@ -64,13 +64,21 @@ $(function() {
     // 並べ替え
     const sort_btn = $('.sort li');
     $(sort_btn).click(function() {
-        $(sort_btn).toggleClass('selected');
         // 並べ替えて表示
         if($(this).data('new') == '1'){
-            newest_bool = true;
+            if($(this).hasClass('selected')) {
+                newest_bool = false;
+            }else {
+                newest_bool = true;
+            }
         }else {
-            newest_bool = false;
+            if($(this).hasClass('selected')) {
+                newest_bool = true;
+            }else {
+                newest_bool = false;
+            }
         }
+        $(sort_btn).toggleClass('selected');
         // 記事を整形して表示
         sort_articles(newest_bool, filter_array, page_article_max);
         write_artciles(0);
