@@ -13,5 +13,10 @@
         "name": "ブログ",
         "img" : "blog.svg",
         "color" : "rgb(0, 148, 122)"
+    },
+    "diary" : {
+        "name": "日記",
+        "img" : "diary.svg",
+        "color" : "rgb(255, 103, 0)"
     }
 }
