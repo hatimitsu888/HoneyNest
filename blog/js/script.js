@@ -106,15 +106,17 @@ $(function() {
     const filter_remove = $('.tag-remove');
     $(filter_all).click(function() {
         $(filter_btn).addClass('selected');
+        filter_array = [];
         // 記事を整形して表示
-        sort_articles(newest_bool, [], page_article_max);
+        sort_articles(newest_bool, filter_array, page_article_max);
         write_artciles(0);
         create_pagination();
     });
     $(filter_remove).click(function() {
         $(filter_btn).removeClass('selected');
+        filter_array = [];
         // 記事を整形して表示
-        sort_articles(newest_bool, [], page_article_max);
+        sort_articles(newest_bool, filter_array, page_article_max);
         write_artciles(0);
         create_pagination();
     });
