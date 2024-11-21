@@ -28,6 +28,7 @@ main {
 /* パンくずリスト */
 .breadcrumbs {
     margin-bottom: 64px;
+    font-size: 1.6rem;
 }
 .breadcrumbs a,p{
     display: inline;
