@@ -47,5 +47,12 @@
         "title"     : "【老人】ジジイを満喫してみた",
         "tag"       : "diary",
         "date"      : "2024/11/20"
+    },
+    {
+        "link"      : "/blog/date/25/1/newyear/",
+        "thumbnail" : "/blog/date/25/1/newyear/img/thumbnail.webp",
+        "title"     : "年、明けました",
+        "tag"       : "blog",
+        "date"      : "2025/01/06"
     }
 ]
