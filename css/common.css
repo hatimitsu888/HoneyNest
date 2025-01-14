@@ -152,6 +152,10 @@ header a:active{
 .dropdown-list.Youtube:hover {
     background-color: #f00;
 }
+.dropdown-list.Niconico:hover {
+    background-color: #252525;
+    color: #fff;
+}
 .dropdown-list.TikTok:hover {
     background-color: #000;
 }
@@ -330,7 +334,8 @@ footer {
         z-index: -1;
         display: block;
         height: 0dvh;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(4px);
         transition: 0.2s;
     }
     header.open::after {
@@ -407,14 +412,18 @@ footer {
     .dropdown-list {
         border: none;
         text-align: left;
-        padding-left: 10%;
+        padding-left: 3%;
         margin: 20px 0;
+        font-size: 2.0rem;
     }
     .dropdown-list a {
         padding: 4px;
     }
     .dropdown-list.Youtube {
         border-left: solid 10px #f00;
+    }
+    .dropdown-list.Niconico {
+        border-left: solid 10px #252525;
     }
     .dropdown-list.TikTok {
         border-left: solid 10px #000;
