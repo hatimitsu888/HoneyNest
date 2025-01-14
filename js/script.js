@@ -54,7 +54,11 @@ function visible_comment(){
 // 最新記事を追加
 function add_new_article(articles, tags) {
     const articles_cnt = Object.keys(articles).length;
-    for(let i = 0; i < articles_cnt && i < 8; i ++){
+    let view_article = 8;
+    if(window.innerWidth <= 800) {
+        view_article = 5;
+    }
+    for(let i = 0; i < articles_cnt && i < view_article; i ++){
         const article = articles[articles_cnt - 1 - i];
         const write_html = `
             <a href="${article.link}" class="new-article article">
