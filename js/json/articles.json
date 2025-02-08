@@ -54,5 +54,12 @@
         "title"     : "年、明けました",
         "tag"       : "blog",
         "date"      : "2025/01/06"
+    },
+    {
+        "link"      : "/blog/date/25/2/discard-thumbnail/",
+        "thumbnail" : "/blog/date/25/2/discard-thumbnail/img/thumbnail.webp",
+        "title"     : "すぐ差し替えた「没サムネ」をここで供養する",
+        "tag"       : "video",
+        "date"      : "2025/02/08"
     }
 ]
