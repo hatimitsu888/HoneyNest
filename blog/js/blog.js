@@ -1,15 +1,34 @@
 $(function() {
     // 目次を作成
     const toc_area = $('.toc ol');
-    $('#blog h2').each(function() {
+    let toc_layer = 0;
+    let write_toc = '';
+    $('#blog h2, #blog h3').each(function() {
         const title = $(this).text();
+
         // タグを付ける
         $(this).removeAttr('id');
         $(this).attr('id', title);
+
+        // 前がh2で今がh3なら
+        if ($(this).prop('tagName') == 'H3' && toc_layer == 0){
+            write_toc += '<ul>';
+        }
+        // 前がh3で今がh2なら
+        if ($(this).prop('tagName') == 'H2' && toc_layer == 1){
+            write_toc += '</ul>';
+        }
+
         // 目次を作成
-        const write_toc = `<a href="#${title}"><li>${title}</li></a>`;
-        $(toc_area).append(write_toc);
+        write_toc += `<li><a href="#${title}">${title}</a></li>`;
+
+        // 見出しタグの種類を保存
+        if ($(this).prop('tagName') == 'H2'){ toc_layer = 0 }
+        else{ toc_layer = 1 }
     });
+    
+    // 書き出し
+    $(toc_area).append(write_toc);
 
     // 目次をクリック
     $('main').on('click', '.toc a', function() {

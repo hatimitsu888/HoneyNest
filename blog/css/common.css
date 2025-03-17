@@ -115,13 +115,22 @@ main h1 {
     margin-top: 64px;
     padding: 5%;
 }
-.toc ol {
-    list-style: decimal;
-    margin-left: 32px;
-}
-.toc a {
-    text-decoration: none;
-}
+    /* 見出し */
+    .toc ol {
+        list-style: decimal;
+        margin-left: 32px;
+    }
+    .toc a {
+        text-decoration: none;
+    }
+    /* 小見出し */
+    .toc ul {
+        padding-left: 8px;
+        margin-left: 8px;
+        margin-bottom: 8px;
+        border-left: dotted 2px var(--blue);
+    }
+
 
 /* サイドバー */
 #sidebar {
@@ -160,6 +169,15 @@ main h2::before {
     background-color: var(--yellow);
     top: 0;
     left: 0;
+}
+
+/* 見出し2 */
+main h3 {
+    font-size: 2.0rem;
+    font-weight: 900;
+    position: relative;
+    margin: 16px 0;
+    border-bottom: dotted 3px var(--blue);
 }
 
 /* 本文 */
