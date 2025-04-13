@@ -19,7 +19,7 @@ $(function() {
                 $(filter_area).append(write_data);
             }
             filter_btn = $('.filter li');
-            console.log(filter_btn);
+            // console.log(filter_btn);
             // 記事を整形
             sort_articles();
             // 記事を表示
@@ -88,7 +88,7 @@ $(function() {
     // 絞り込み
     let filter_btn = $('.filter li');
     $('main').on('click', '.filter li', function() {
-        console.log('clikced');
+        // console.log('clikced');
         $(this).toggleClass('selected');
         // 絞り込んだタグを変数に
         const selected_tags = $('.filter .selected');
@@ -143,8 +143,8 @@ $(function() {
         }
         change_pagination();
 
-        console.log(page_max);
-        console.log(this_page);
+        // console.log(page_max);
+        // console.log(this_page);
         
         // 記事を表示
         write_artciles(this_page);
