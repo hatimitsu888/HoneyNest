@@ -18,5 +18,15 @@
         "name": "日記",
         "img" : "diary.svg",
         "color" : "rgb(255, 103, 0)"
+    },
+    "idea" : {
+        "name": "企画",
+        "img" : "idea.svg",
+        "color" : "rgb(255, 215, 0)"
+    },
+    "craft" : {
+        "name": "工作",
+        "img" : "craft.svg",
+        "color" : "rgb(64, 224, 208)"
     }
 }
