@@ -28,29 +28,12 @@ $(function() {
             create_pagination();
         });
     });
-    
-    // アコーディオン
-    const summary = $('.detail-open-btn');
-    const details = $('.sarch');
-    const sarch_condition = $('.sarch-condition');
-    let speed = 300;
-    $(summary).click(function(e){
-        // アコーディオンのデフォルトの開け閉め挙動がされないように
-        e.preventDefault();
-        const this_details = $(this).parent($(details));
-        const sarch_detail = $(this).nextAll($(sarch_condition));
-        if($(this_details).attr('open') != undefined){
-            // 閉じる
-            $(this).removeClass('detail-open');
-            $(sarch_detail).slideUp(speed, function(){
-                $(this_details).removeAttr('open');
-            });
-        }else {
-            // 開ける
-            $(this).addClass('detail-open');
-            $(this_details).attr('open', 'true');
-            $(sarch_detail).hide().slideDown(speed);
-        }
+
+    // 並べ替えと絞り込みを表示（スマホ）
+    let filters_btn = $('.filters-btn');
+    let filters = $('.filters-wrap');
+    $(filters_btn).click(function(){
+        $(filters).toggleClass('filters-close');
     });
 
     // 並べ替えと絞り込み用の変数

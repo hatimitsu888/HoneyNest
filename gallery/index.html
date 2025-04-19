@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@500;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/gallery/css/style.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+
+    <link rel="icon" href="/img/icon.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="/img/icon.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/img/icon.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="/img/icon.png" sizes="64x64" type="image/png">
+
+    <link rel="apple-touch-icon-precomposed" href="https://htmt888.com/img/sp_app_icon.png">
+
+    <!-- ▼ 変更する必要のある物 ▼ -->
+    
+    <title>はちみつの巣 - サムネギャラリー</title>
+    <meta name="description" content="Youtubeのサムネイルの裏話とか" />
+
+    <meta property="og:url" content="https://htmt888.com/gallery/">
+    <meta property="og:title" content="はちみつの巣 - サムネギャラリー">
+    <meta property="og:image" content="https://htmt888.com/img/x_icon.webp">
+    <meta property="og:description" content="Youtubeのサムネイルの裏話とか">
+    
+    <!-- ▲ 変更する必要のある物 ▲ -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Hatimitsu83yg">
+
+    <!-- Google adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4217197923254036" crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y2CNBDEF2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3Y2CNBDEF2');
+</script>
+</head>
+
+<body>
+    <header>
+        <ul class="header">
+            <li class="logo">
+                <h1>
+                    <a href="/"><img src="/img/logo.webp" alt="サイトロゴ"></a>
+                </h1>
+            </li>
+            <div class="hamburger"><span class="hamburger-icon"></span></div>
+            <li class="header-link">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/blog/">BLOG</a>
+                        </li>
+                        <li class="link-button">
+                            LINK ▼
+                            <ul class="dropdown-lists">
+                                <li class="dropdown-list Youtube"><a href="https://www.youtube.com/@Hatimitsu" target="_blank" rel="noreferrer noopener">Youtube</a></li>
+                                <li class="dropdown-list Niconico"><a href="https://www.nicovideo.jp/user/137797410" target="_blank" rel="noreferrer noopener">ニコニコ動画</a></li>
+                                <li class="dropdown-list TikTok"><a href="https://www.tiktok.com/@hatimitsumnk" target="_blank" rel="noreferrer noopener" data-text="TikTok">TikTok</a></li>
+                                <li class="dropdown-list X"><a href="https://x.com/Hatimitsu83yg" target="_blank" rel="noreferrer noopener">𝕏</a></li>
+                                <li class="dropdown-list Twitch"><a href="https://www.twitch.tv/hatimitsu83" target="_blank" rel="noreferrer noopener">Twitch</a></li>
+                                <li class="dropdown-list CraftersColoney"><a href="https://minecraft-mcworld.com/author/032204c869ca56e9a42e983b0ddb352361320f28/" target="_blank" rel="noreferrer noopener">クラフターズコロニー</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <section id="articles">
+            <div class="breadcrumbs">
+                <a href="/">トップ ></a>
+            </div>
+            <h1>ブログ</h1>
+
+            <details class="sarch sort-wrap">
+                <summary class="sarch-title sort-title detail-open-btn">並べ替え</summary>
+                <div class="sarch-condition sort-date">
+                    <ul class="sarch-btns sort">
+                        <li data-new="1" class="selected">新しい</li>
+                        <li data-new="0">古い</li>
+                    </ul>
+                </div>
+            </details>
+            <details class="sarch filter-wrap">
+                <summary class="sarch-title filter-title detail-open-btn">タグで絞り込み</summary>
+                <div class="sarch-condition filter-tag">
+                    <ul class="sarch-btns filter-all">
+                        <li class="tag-all">すべてのタグ</li>
+                        <li class="tag-remove">すべて外す</li>
+                    </ul>
+                    <ul class="sarch-btns filter"></ul>
+                </details>
+            </div>
+
+            <div class="articles-area"></div>
+            <ul class="pagination">
+                <li data-page="back"></li>
+                <li data-page="0" class="page-num selected"><span>1</span></li>
+                <span class="period">...</span>
+                <li data-page="1" data-pos="0" class="page-num"><span>2</span></li>
+                <li data-page="2" data-pos="1" class="page-num"><span>3</span></li>
+                <li data-page="3" data-pos="2" class="page-num"><span>4</span></li>
+                <span class="period">...</span>
+                <li data-page="5" class="page-num"><span>5</span></li>
+                <li data-page="next"></li>
+            </ul>
+
+        </section>
+        
+    </main>
+
+    <footer>
+        <a href="#" class="page-top">
+            <div class="hex"></div>
+            <div class="arrow"></div>
+        </a>
+        <div class="footer-link">
+            <ul class="footer-link-wrap">
+                <li><a href="https://www.youtube.com/@Hatimitsu" target="_blank" rel="noreferrer noopener">Youtube</a></li>
+                <li><a href="https://www.nicovideo.jp/user/137797410" target="_blank" rel="noreferrer noopener">ニコニコ動画</a></li>
+                <li><a href="https://www.tiktok.com/@hatimitsumnk" target="_blank" rel="noreferrer noopener">TikTok</a></li>
+                <li><a href="https://x.com/Hatimitsu83yg" target="_blank" rel="noreferrer noopener">𝕏</a></li>
+                <li><a href="https://www.twitch.tv/hatimitsu83" target="_blank" rel="noreferrer noopener">Twitch</a></li>
+                <li><a href="https://minecraft-mcworld.com/author/032204c869ca56e9a42e983b0ddb352361320f28/" target="_blank" rel="noreferrer noopener">クラフターズコロニー</a></li>
+            </ul>
+            <a class="privacy-policy" href="/privacy-policy">プライバシーポリシー</a>
+        </div>
+        <p class="copylight"><small>&copy; 2024 はちみつ</small></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/js/common.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

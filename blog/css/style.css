@@ -1,19 +1,43 @@
 /* https://www.colorsupplyyy.com/s/dOJx7KDwqp */
 
 #articles {
-    width: calc(75vw - 20%);
+    width: calc(75vw - 22.5%);
     margin: 5%;
+    margin-right: 2.5%;
     background-color: #fff;
     padding: 5%;
 }
 
 /* 並べ替え・絞り込み */
+#filters {
+    position: relative;
+    margin-top: 5%;
+}
+.filters-wrap {
+    position: fixed;
+    width: 25vw;
+    right: 5%;
+}
+
+.filters-btn {
+    display: none;
+    position: absolute;
+    left: -40px;
+    width: 36px;
+    height: 36px;
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-image: url(../img/close.svg);
+    background-color: var(--yellow);
+}
+
 .sarch {
     position: relative;
-    background-color: var(--gray);
+    background-color: #fff;
     margin-bottom: 64px;
-    padding-bottom: 35px;
-    font-size: 2rem;
+    padding-bottom: 5px;
+    font-size: 1.6rem;
 }
 .sarch-title {
     display: block;
@@ -22,7 +46,6 @@
     padding-left: 50px;
     background-color: var(--yellow);
     border-radius: 0 0 16px 0;
-    cursor: pointer;
     user-select: none;
 }
 .sarch-title::-webkit-details-marker {
@@ -69,33 +92,9 @@
         100% 0
     );
 }
-/* 下の矢印 */
-.sarch-title::after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100px;
-    height: 15px;
-    background-color: #000;
-    left: 50%;
-    clip-path: polygon(
-        0 0,
-        50% 100%,
-        100% 0
-    );
-    transform: translate(-50%, 0) rotateX(0);
-    bottom: 10px;
-    transition: 0.3s;
-}
-.sarch-title.detail-open::after {
-    transform: translate(-50%, 0) rotateX(180deg);
-    transition: 0.3s;
-}
-
 
 .sarch-condition {
-    margin: 15px 15px;
-    padding-bottom: 15px;
+    margin: 5px 5px;
 }
 .sarch-btns {
     display: flex;
@@ -103,8 +102,8 @@
     flex-wrap: wrap;
 }
 .sarch-btns li {
-    padding: 5px 15px;
-    margin: 15px 5px;
+    padding: 2.5px 8px;
+    margin: 10px 5px;
     background-color: #fff;
     border: solid 3px transparent;
     border-radius: 32px;
@@ -297,6 +296,23 @@
     .pagination {
         width: 100%;
         margin: 0;
+    }
+
+    /* フィルター */
+    .filters-wrap {
+        width: 60vw;
+        right: 0;
+        background-color: #fff;
+        transition: 0.3s;
+    }
+    .filters-close {
+        right: -60vw;
+    }
+    .filters-btn {
+        display: block;
+    }
+    .filters-close > .filters-btn {
+        mask-image: url(../img/arrow.svg);
     }
 }
 /* スマホ */
