@@ -88,26 +88,6 @@
             </div>
             <h1>ブログ</h1>
 
-            <details class="sarch sort-wrap">
-                <summary class="sarch-title sort-title detail-open-btn">並べ替え</summary>
-                <div class="sarch-condition sort-date">
-                    <ul class="sarch-btns sort">
-                        <li data-new="1" class="selected">新しい</li>
-                        <li data-new="0">古い</li>
-                    </ul>
-                </div>
-            </details>
-            <details class="sarch filter-wrap">
-                <summary class="sarch-title filter-title detail-open-btn">タグで絞り込み</summary>
-                <div class="sarch-condition filter-tag">
-                    <ul class="sarch-btns filter-all">
-                        <li class="tag-all">すべてのタグ</li>
-                        <li class="tag-remove">すべて外す</li>
-                    </ul>
-                    <ul class="sarch-btns filter"></ul>
-                </details>
-            </div>
-
             <div class="articles-area"></div>
             <ul class="pagination">
                 <li data-page="back"></li>
@@ -121,6 +101,33 @@
                 <li data-page="next"></li>
             </ul>
 
+        </section>
+
+        <section id="filters">
+            <div class="filters-wrap filters-close">
+                <div class="filters-btn"></div>
+
+                <div class="sarch sort-wrap">
+                    <summary class="sarch-title sort-title detail-open-btn">並べ替え</summary>
+                    <div class="sarch-condition sort-date">
+                        <ul class="sarch-btns sort">
+                            <li data-new="1" class="selected">新しい</li>
+                            <li data-new="0">古い</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sarch filter-wrap">
+                    <summary class="sarch-title filter-title detail-open-btn">タグで絞り込み</summary>
+                    <div class="sarch-condition filter-tag">
+                        <ul class="sarch-btns filter-all">
+                            <li class="tag-all">すべて</li>
+                            <li class="tag-remove">クリア</li>
+                        </ul>
+                        <ul class="sarch-btns filter"></ul>
+                    </div>
+                </div>
+
+            </div>
         </section>
         
     </main>
