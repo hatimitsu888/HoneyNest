@@ -28,7 +28,7 @@
     mask-position: center center;
     mask-repeat: no-repeat;
     mask-size: contain;
-    mask-image: url(../img/close.svg);
+    mask-image: url(../../img/close.svg);
     background-color: var(--yellow);
 }
 
@@ -312,7 +312,7 @@
         display: block;
     }
     .filters-close > .filters-btn {
-        mask-image: url(../img/arrow.svg);
+        mask-image: url(../../img/arrow.svg);
     }
 }
 /* スマホ */
