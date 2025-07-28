@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
     <link href="/css/common.css" rel="stylesheet">
-    <link href="/gallery/css/style.css" rel="stylesheet">
+    <link href="/blog/css/common.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
 
     <link rel="icon" href="/img/icon.png" sizes="16x16" type="image/png">
@@ -23,13 +23,13 @@
 
     <!-- ▼ 変更する必要のある物 ▼ -->
     
-    <title>はちみつの巣 - サムネギャラリー</title>
-    <meta name="description" content="Youtubeのサムネイルの裏話とか" />
+    <title>はちみつの巣 - サムネイルギャラリー</title>
+    <meta name="description" content="Youtubeチャンネルにアップしたサムネイルの詳細を表示できるページです。" />
 
-    <meta property="og:url" content="https://htmt888.com/gallery/">
-    <meta property="og:title" content="はちみつの巣 - サムネギャラリー">
+    <meta property="og:url" content="https://htmt888.com/blog">
+    <meta property="og:title" content="はちみつの巣 - サムネイルギャラリー">
     <meta property="og:image" content="https://htmt888.com/img/x_icon.webp">
-    <meta property="og:description" content="Youtubeのサムネイルの裏話とか">
+    <meta property="og:description" content="Youtubeチャンネルにアップしたサムネイルの詳細を表示できるページです。">
     
     <!-- ▲ 変更する必要のある物 ▲ -->
     <meta name="twitter:card" content="summary">
@@ -86,29 +86,9 @@
             <div class="breadcrumbs">
                 <a href="/">トップ ></a>
             </div>
-            <h1>ブログ</h1>
+            <h1>サムネイルギャラリー</h1>
 
-            <details class="sarch sort-wrap">
-                <summary class="sarch-title sort-title detail-open-btn">並べ替え</summary>
-                <div class="sarch-condition sort-date">
-                    <ul class="sarch-btns sort">
-                        <li data-new="1" class="selected">新しい</li>
-                        <li data-new="0">古い</li>
-                    </ul>
-                </div>
-            </details>
-            <details class="sarch filter-wrap">
-                <summary class="sarch-title filter-title detail-open-btn">タグで絞り込み</summary>
-                <div class="sarch-condition filter-tag">
-                    <ul class="sarch-btns filter-all">
-                        <li class="tag-all">すべてのタグ</li>
-                        <li class="tag-remove">すべて外す</li>
-                    </ul>
-                    <ul class="sarch-btns filter"></ul>
-                </details>
-            </div>
-
-            <div class="articles-area"></div>
+            <div class="thumbnails-area"></div>
             <ul class="pagination">
                 <li data-page="back"></li>
                 <li data-page="0" class="page-num selected"><span>1</span></li>
@@ -122,7 +102,50 @@
             </ul>
 
         </section>
+
+        <section id="filters">
+            <div class="filters-wrap filters-close">
+                <div class="filters-btn"></div>
+
+                <div class="sarch sort-wrap">
+                    <summary class="sarch-title sort-title detail-open-btn">並べ替え</summary>
+                    <div class="sarch-condition sort-date">
+                        <ul class="sarch-btns sort">
+                            <li data-new="1" class="selected">新しい</li>
+                            <li data-new="0">古い</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sarch filter-wrap">
+                    <summary class="sarch-title filter-title detail-open-btn">タグで絞り込み</summary>
+                    <div class="sarch-condition filter-tag">
+                        <ul class="sarch-btns filter-all">
+                            <li class="tag-all">すべて</li>
+                            <li class="tag-remove">クリア</li>
+                        </ul>
+                        <ul class="sarch-btns filter"></ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
         
+        <!-- モーダル -->
+        <div id="modal" class="modal-hidden">
+            <div class="modal-wrap">
+                <div class="modal-content">
+                    <h2 class="modal-title">タイトル</h2>
+                    <img class="modal-thumbnail" src="thumbnails/0.webp" alt="サムネイル画像">
+                    <a href="" class="modal-link" target="_blank" rel="noreferrer noopener">
+                        Youtubeで見る
+                    </a>
+                    <div class="modal-text">
+                        あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお
+                    </div>
+                </div>
+            </div>
+            <div class="modal-close-btn">とじる</div>
+        </div>
     </main>
 
     <footer>
@@ -141,7 +164,7 @@
             </ul>
             <a class="privacy-policy" href="/privacy-policy">プライバシーポリシー</a>
         </div>
-        <p class="copylight"><small>&copy; 2024 はちみつ</small></p>
+        <p class="copylight"><small>&copy; 2025 はちみつ</small></p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

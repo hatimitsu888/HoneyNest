@@ -1,0 +1,364 @@
+/* https://www.colorsupplyyy.com/s/dOJx7KDwqp */
+
+#articles {
+    width: calc(100vw - 20%);
+    margin: 5%;
+    margin-right: 2.5%;
+    background-color: #fff;
+    padding: 5%;
+}
+
+/* 並べ替え・絞り込み */
+#filters {
+    position: relative;
+    margin-top: 5%;
+}
+.filters-wrap {
+    background-color: #fff;
+    position: fixed;
+    width: 25vw;
+    right: 5%;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+    transition: 0.3s;
+}
+.filters-close {
+    right: -25vw;
+}
+
+.filters-btn {
+    position: absolute;
+    left: -40px;
+    width: 36px;
+    height: 36px;
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-image: url(../../img/close.svg);
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+.filters-close > .filters-btn {
+    mask-image: url(../../img/arrow.svg);
+}
+
+.sarch {
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 64px;
+    padding-bottom: 5px;
+    font-size: 1.6rem;
+}
+.sarch-title {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 900;
+    padding-left: 50px;
+    background-color: var(--yellow);
+    border-radius: 0 0 16px 0;
+    user-select: none;
+}
+.sarch-title::-webkit-details-marker {
+    display: none;
+}
+.sarch-title::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* 左のアイコン */
+.sort-title::before {
+    clip-path: polygon(
+        0 10%,
+        100% 10%,
+        100% 25%,
+        0 25%,
+
+        0 42.5%,
+        80% 42.5%,
+        80% 57.5%,
+        0 57.5%,
+
+        0 75%,
+        60% 75%,
+        60% 90%,
+        0 90%
+    );
+}
+.filter-title::before {
+    clip-path: polygon(
+        0 0,
+        0 10%,
+        40% 50%,
+        40% 90%,
+        60% 100%,
+        60% 50%,
+        100% 10%,
+        100% 0
+    );
+}
+
+.sarch-condition {
+    margin: 5px 5px;
+}
+.sarch-btns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.sarch-btns li {
+    padding: 2.5px 8px;
+    margin: 10px 5px;
+    background-color: #fff;
+    border: solid 3px transparent;
+    border-radius: 32px;
+    cursor: pointer;
+    user-select: none;
+}
+.sarch-btns li:hover {
+    filter: brightness(80%);
+}
+.sarch-btns li:active {
+    filter: brightness(100%);
+}
+
+.sort li {
+    border-color: var(--green);
+}
+.filter {
+    font-size: 1.2rem;
+    justify-content: flex-start;
+}
+.filter li {
+    margin: 5px 2.5px;
+    border-color: var(--blue);
+}
+.filter li::before {
+    content: '';
+}
+
+.filter-all li {
+    border-color: var(--yellow);
+}
+.filter-all li:active {
+    background-color: var(--yellow);
+}
+
+.selected {
+    color: #fff;
+}
+.sort .selected {
+    background-color: var(--green);
+}
+.filter .selected {
+    background-color: var(--blue);
+}
+
+/* サムネ */
+.thumbnails-area {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.thumbnails-area div {
+    width: 19.5%;
+    height: auto;
+    aspect-ratio: 16/9;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    border-radius: 5%;
+    margin: 0.25%;
+    transition: 0.3s;
+    box-shadow: inset 0 0 0px var(--yellow);
+    cursor: pointer;
+}
+.thumbnails-area div:hover {
+    background-size: 105%;
+    box-shadow: inset 0 0 20px var(--yellow);
+}
+/* サムネ */
+
+/* ページネーション */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 15%;
+    margin-top: 100px;
+    text-align: center;
+}
+.pagination li {
+    position: relative;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 0 3px #000;
+    cursor: pointer;
+    user-select: none;
+}
+.pagination li:first-of-type::after,li:last-of-type::after {
+    content: '';
+    width: 40%;
+    height: 40%;
+    margin: auto;
+    background-color: #000;
+    clip-path: polygon(
+        100% 0,
+        0 50%,
+        100% 100%
+    );
+}
+.pagination li:last-of-type::after {
+    rotate: 180deg;
+}
+.pagination li span {
+    margin: auto;
+}
+.pagination .selected {
+    color: #000;
+    background-color: var(--yellow);
+}
+.pagination li:hover {
+    filter: brightness(0.8);
+}
+.pagination .hidden {
+    display: none;
+}
+
+/* ページネーション */
+
+/* モーダル */
+#modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    top: 0;
+    left: 0;
+    padding: 10% 0;
+    overflow-y: hidden;
+    transition: 0.3s;
+}
+.modal-hidden {
+    display: none;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+}
+
+.modal-wrap {
+    position: absolute;
+    width: 60%;
+    height: 50%;
+    left: 20%;
+    overflow-y: scroll;
+}
+
+.modal-content {
+    min-height: 565px;
+    background-color: #fff;
+}
+
+.modal-title {
+    background-color: initial;
+    margin: 0 2.5%;
+    padding-top: 20px;
+    font-size: 2.0rem;
+}
+.modal-title::before {
+    display: none;
+}
+.modal-thumbnail {
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: 20px 5%;
+    margin-top: 20px;
+}
+.modal-text {
+    width: 90%;
+    margin: 5% 5%;
+    margin-bottom: 0;
+    padding-bottom: 7.5%;
+    font-size: 1.6rem;
+}
+
+.modal-close-btn {
+    position: fixed;
+    width: 40%;
+    height: 50px;
+    left: 30%;
+    bottom: 30%;
+    background-color: var(--green);
+    margin: 0 auto;
+    border-radius: 8px;
+    font-size: 3.2rem;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.modal-close-btn:hover {
+    filter: brightness(0.8);
+}
+
+/* モーダル */
+
+/* スマホ */
+@media screen and (max-width: 800px) {
+    #articles {
+        width: 100vw;
+        margin: 50px 0;
+    }
+    .sarch {
+        font-size: 1.6rem;
+    }
+
+    .thumbnails-area div {
+        width: 31%;
+        margin: 1%;
+    }
+    .thumbnail {
+        height: auto;
+        width: 70%;
+    }
+    .thumbnail img {
+        height: auto;
+        width: 100%;
+    }
+
+    .pagination {
+        width: 100%;
+        margin: 0;
+        margin-top: 50px;
+    }
+
+    /* フィルター */
+    .filters-wrap {
+        width: 60vw;
+        right: 0;
+        background-color: #fff;
+    }
+    .filters-close {
+        right: -60vw;
+    }
+    .filters-btn {
+        display: block;
+    }
+
+    /* モーダル */
+    #modal {
+        padding: 25% 0;
+    }
+    .modal-wrap {
+        width: 80%;
+        left: 10%;
+    }
+}
+/* スマホ */
