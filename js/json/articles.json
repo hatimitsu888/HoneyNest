@@ -68,5 +68,12 @@
         "title"     : "【老い】再び老人の道を歩むジジイ",
         "tag"       : "diary",
         "date"      : "2025/07/28"
+    },
+    {
+        "link"      : "/blog/date/26/1/new-year/",
+        "thumbnail" : "/blog/date/26/1/new-year/img/thumbnail.webp",
+        "title"     : "新年のご挨拶",
+        "tag"       : "blog",
+        "date"      : "2026/01/02"
     }
 ]
