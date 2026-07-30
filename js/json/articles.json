@@ -75,5 +75,12 @@
         "title"     : "新年のご挨拶",
         "tag"       : "blog",
         "date"      : "2026/01/02"
+    },
+    {
+        "link"      : "/blog/date/26/7/hyper-special-ultra-hot/",
+        "thumbnail" : "/blog/date/26/7/hyper-special-ultra-hot/img/thumbnail.webp",
+        "title"     : "夏の魔王をぶっ倒せ！激熱エアコン戦争！",
+        "tag"       : "diary",
+        "date"      : "2026/07/30"
     }
 ]
