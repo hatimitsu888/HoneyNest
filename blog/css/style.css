@@ -8,6 +8,45 @@
     padding: 5%;
 }
 
+.article-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0;
+}
+.article-search label {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+.article-search label img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+.article-search input {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 14px;
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
+    font: inherit;
+}
+.article-search input:focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 2px;
+}
+.no-search-results {
+    margin: 32px 0;
+    text-align: center;
+}
+
 /* 並べ替え・絞り込み */
 #filters {
     position: relative;
@@ -262,6 +301,14 @@
     #articles {
         width: 100vw;
         margin: 50px 0;
+    }
+    .article-search {
+        gap: 8px;
+        margin: 24px 0;
+    }
+    .article-search label img {
+        width: 22px;
+        height: 22px;
     }
     .sarch {
         font-size: 1.6rem;

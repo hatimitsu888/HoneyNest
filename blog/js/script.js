@@ -39,10 +39,21 @@ $(function() {
     // 並べ替えと絞り込み用の変数
     let newest_bool = true;
     let filter_array = [];
+    let search_query = '';
     // 最大ページ数
     let page_max = 0;
     // 表示させる数
     let page_article_max = 10;
+
+    $('.article-search').on('submit', function(event) {
+        event.preventDefault();
+    });
+    $('#article-search-input').on('input', function() {
+        search_query = $(this).val().trim();
+        sort_articles(newest_bool, filter_array, page_article_max);
+        write_artciles(0);
+        create_pagination();
+    });
 
     // 並べ替え
     const sort_btn = $('.sort li');
@@ -174,22 +185,14 @@ $(function() {
     }
 
     // 記事を整形
-    function sort_articles(newest = true, filter = [], cnt = 10) {
+    function sort_articles(newest = true, filter = [], cnt = 10, query = search_query) {
         articles_area = $('.articles-area');
-        // フィルタリング
-        let filtered_articles = [];
-        if(filter[0]) {
-            articles_data.forEach(e => {
-                const this_article = e;
-                filter.forEach(e => {
-                    if(this_article.tag == e){
-                        filtered_articles.push(this_article);
-                    }
-                });
-            });
-        }else{
-            filtered_articles = articles_data;
-        }
+        const normalized_query = query.toLocaleLowerCase();
+        const filtered_articles = articles_data.filter(article => {
+            const matches_tag = filter.length === 0 || filter.includes(article.tag);
+            const searchable_text = `${article.title} ${tags[article.tag]['name']} ${article.date}`.toLocaleLowerCase();
+            return matches_tag && (!normalized_query || searchable_text.includes(normalized_query));
+        });
         const articles_cnt = Object.keys(filtered_articles).length;
         // ページの最大数を設定
         page_max = Math.max(0, Math.ceil(articles_cnt / cnt) - 1);
@@ -213,6 +216,10 @@ $(function() {
         const write_area = $('.articles-area');
         // 既存の記事を削除
         $(write_area).children().remove();
+        if (!articles[page] || articles[page].length === 0) {
+            $(write_area).append('<p class="no-search-results" role="status">該当する記事が見つかりませんでした。</p>');
+            return;
+        }
         // 記事を表示させる
         articles[page].forEach(article => {
             const write_data =`
