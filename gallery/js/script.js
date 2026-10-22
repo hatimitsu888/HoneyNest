@@ -89,6 +89,7 @@ $(function() {
         sort_articles(newest_bool, filter_array, page_article_max);
         write_artciles(0);
         this_page = 0;
+        change_pagination();
     });
 
     // 絞り込み
@@ -160,107 +161,39 @@ $(function() {
     // 作る
     function create_pagination() {
         this_page = 0;
-        const period = $('.period');
-        const page_num = $('.page-num');
-        // hiddenクラスをリセット
-        $(period).removeClass('hidden');
-        $(page_num).removeClass('hidden');
-        // selectedクラスをリセット
-        $(page_num).removeClass('selected');
-        let this_page_num = $(page_num)[0];
-        $(this_page_num).addClass('selected');
-        // page_maxが1以上なら最大値設定
-        if(page_max > 0){
-            const this_page_num = $(page_num)[4];
-            $(this_page_num).data('page', page_max);
-            $(this_page_num).children().text(page_max + 1)
-        }else {
-            // 0以下なら最大値を消す
-            const this_page_num = $(page_num)[4];
-            $(this_page_num).addClass('hidden');
-        }
-        // 最初の...を消す
-        let this_period = $(period)[0];
-        $(this_period).addClass('hidden');
-        // 5ページ以下なら
-        if(page_max < 5){
-            // 最後の...を消す
-            let this_period = $(period)[1];
-            $(this_period).addClass('hidden');
-            // 4ページ以下
-            if(page_max < 4){
-                let this_page_num = $(page_num)[3];
-                $(this_page_num).addClass('hidden');
-                // 3ページ以下
-                if(page_max < 3){
-                    let this_page_num = $(page_num)[2];
-                    $(this_page_num).addClass('hidden');
-                    // 2ページ以下
-                    if(page_max < 2){
-                        let this_page_num = $(page_num)[1];
-                        $(this_page_num).addClass('hidden');
-                    }
-                }
-            }
-        }
+        change_pagination();
     }
     // 表示を切り替える
     function change_pagination() {
-        let page_num = $('.page-num');
-        // 6ページ以上なら
-        if(page_max > 4) {
-            let period = $('.period');
-            // 3以上もしくは最大-2以下なら押した場所に応じて書き換え
-            if(this_page > 1 && this_page < page_max - 1){
-                for(let i = -1; i < 2; i ++){
-                    const this_page_num = $(page_num)[i + 2];
-                    $(this_page_num).data('page', this_page + i);
-                    $(this_page_num).children().text(this_page + i + 1);
-                }
+        const period = $('.period');
+        const page_num = $('.page-num');
+        const page_count = page_max + 1;
+        let visible_pages;
+        if (page_count <= 5) {
+            visible_pages = Array.from({ length: page_count }, (_, index) => index);
+            $(period).addClass('hidden');
+        } else {
+            let first_middle_page;
+            if (this_page <= 2) {
+                first_middle_page = 1;
+            } else if (this_page >= page_max - 2) {
+                first_middle_page = page_max - 3;
+            } else {
+                first_middle_page = this_page - 1;
             }
-            // 押したのが1だったら
-            if(this_page == 0) {
-                for(let i = 0; i < 3; i ++){
-                    const this_page_num = $(page_num)[i + 1];
-                    $(this_page_num).data('page', i + 1);
-                    $(this_page_num).children().text(i + 2);
-                }
-            }
-            // 押したのが最後のページだったら
-            if(this_page == page_max) {
-                for(let i = 0; i < 3; i ++){
-                    const this_page_num = $(page_num)[i + 1];
-                    $(this_page_num).data('page', page_max - 3 + i);
-                    $(this_page_num).children().text( page_max - 2 + i);
-                }
-            }
-            // 左の...を表示
-            if(this_page > 2){
-                const this_period = $(period)[0];
-                $(this_period).removeClass('hidden');
-            }else {
-                const this_period = $(period)[0];
-                $(this_period).addClass('hidden');
-            }
-            // 右の...を表示
-            if(this_page < page_max - 2){
-                const this_period = $(period)[1];
-                $(this_period).removeClass('hidden');
-            }else {
-                const this_period = $(period)[1];
-                $(this_period).addClass('hidden');
-            }
-
+            visible_pages = [0, first_middle_page, first_middle_page + 1, first_middle_page + 2, page_max];
+            $(period[0]).toggleClass('hidden', first_middle_page <= 1);
+            $(period[1]).toggleClass('hidden', first_middle_page + 2 >= page_max - 1);
         }
-        // selectedクラスを削除
-        $(page_num).removeClass('selected');
-        // 押した位置にselectedを追加
-        for(let i = 0; i < page_num.length; i ++){
-            const this_page_num = $(page_num)[i];
-            if($(this_page_num).data('page') == this_page){
-                $(this_page_num).addClass('selected');
+        page_num.each(function(index) {
+            const page = visible_pages[index];
+            $(this).toggleClass('hidden', page === undefined);
+            $(this).toggleClass('selected', page === this_page);
+            if (page !== undefined) {
+                $(this).attr('data-page', page).data('page', page);
+                $(this).children().text(page + 1);
             }
-        }
+        });
     }
 
     // サムネを整形
@@ -282,7 +215,7 @@ $(function() {
         }
         const articles_cnt = Object.keys(filtered_articles).length;
         // ページの最大数を設定
-        page_max = Math.floor(articles_cnt / cnt);
+        page_max = Math.max(0, Math.ceil(articles_cnt / cnt) - 1);
 
         // ページを作成
         articles = [[]];

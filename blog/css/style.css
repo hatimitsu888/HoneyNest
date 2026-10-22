@@ -226,7 +226,7 @@
     cursor: pointer;
     user-select: none;
 }
-.pagination li:first-of-type::after,li:last-of-type::after {
+.pagination li:first-of-type::after,.pagination li:last-of-type::after {
     content: '';
     width: 40%;
     height: 40%;

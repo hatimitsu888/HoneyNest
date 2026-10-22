@@ -31,18 +31,22 @@ $(function() {
     $(toc_area).append(write_toc);
 
     // 目次をクリック
-    $('main').on('click', '.toc a', function() {
+    $('main').on('click', '.toc a', function(event) {
+        event.preventDefault();
         // スクロール速度
         const speed = 500;
         // 目次のリンク先を取得
         const href = $(this).attr('href');
-        const target = $(href);
+        const target = document.getElementById(href.slice(1));
+        if (!target) {
+            return;
+        }
         // ヘッダーの高さを取得
         const header_height = $('header').height();
         // 何px上にするか決める
         const offset = 64;
         // 位置を計算
-        const pos = target.offset().top - header_height - offset;
+        const pos = $(target).offset().top - header_height - offset;
 
         // 移動
         $('body, html').animate({ scrollTop: pos }, speed);

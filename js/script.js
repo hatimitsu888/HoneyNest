@@ -25,7 +25,7 @@ function add_comment(articles, tags) {
             <div class="mainvisual article hidden">
                 <a class="mainvisual article-link" href="${article.link}">
                     <div class="mainvisual tag-icon" style="background-color:${tags[article.tag]['color']}">
-                        <img src="/img/icon/${tags[article.tag]['img']}">
+                        <img src="/img/icon/${tags[article.tag]['img']}" alt="">
                     </div>
                     <div class="mainvisual article-text">
                         <div class="mainvisual date">${article.date}</div>
@@ -42,13 +42,12 @@ function add_comment(articles, tags) {
 // 一定時間毎に表示
 let comment_interval;
 function visible_comment(){
-    try {
-        let comments = document.querySelectorAll('.article.hidden');
-        comments[0].classList.remove('hidden');
-    }
-    catch {
+    const comments = document.querySelectorAll('.article.hidden');
+    if (comments.length === 0) {
         clearInterval(comment_interval);
+        return;
     }
+    comments[0].classList.remove('hidden');
 }
 
 // 最新記事を追加
@@ -63,7 +62,7 @@ function add_new_article(articles, tags) {
         const write_html = `
             <a href="${article.link}" class="new-article article">
                 <div class="new-article thumbnail">
-                    <img src="${article.thumbnail == '#' || '' ? '/img/noimage.webp' : article.thumbnail}">
+                    <img src="${article.thumbnail && article.thumbnail !== '#' ? article.thumbnail : '/img/noimage.webp'}" alt="${article.title}">
                     <div class="new-article tag" style="border-color:${tags[article.tag]['color']};">
                         <span>${tags[article.tag]['name']}</span>
                     </div>
