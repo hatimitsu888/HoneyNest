@@ -260,6 +260,7 @@ $(function() {
         $('.modal-thumbnail').attr('src', modal_thumb);
         $('.modal-link').attr('href', modal_link);
         $('.modal-text').html(modal_desc);
+        lockPageScroll('modal');
         $('#modal').removeClass('modal-hidden');
     });
 
@@ -267,6 +268,7 @@ $(function() {
     $('#modal').click(function(e) {
         if(!$(e.target).closest('.modal-wrap').length) {
             $('#modal').addClass('modal-hidden');
+            unlockPageScroll('modal');
         }
     });
 });

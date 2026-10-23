@@ -237,14 +237,19 @@
 /* モーダル */
 #modal {
     position: fixed;
-    width: 100vw;
+    inset: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     height: 100vh;
+    height: 100dvh;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
-    top: 0;
-    left: 0;
-    padding: 10% 0;
-    overflow-y: hidden;
+    padding: 16px;
+    z-index: 100;
     transition: 0.3s;
 }
 .modal-hidden {
@@ -252,57 +257,71 @@
     background-color: rgba(0, 0, 0, 0);
     backdrop-filter: blur(0);
 }
-
-.modal-wrap {
-    position: absolute;
-    width: 60%;
-    height: 50%;
-    left: 20%;
-    overflow-y: scroll;
+#modal.modal-hidden {
+    display: none;
 }
 
-.modal-content {
-    min-height: 565px;
+.modal-wrap {
+    position: relative;
+    box-sizing: border-box;
+    width: min(90vw, 960px);
+    max-height: calc(100dvh - 110px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: 12px;
     background-color: #fff;
 }
 
+.modal-content {
+    box-sizing: border-box;
+    padding: 24px 32px;
+}
+
 .modal-title {
-    background-color: initial;
-    margin: 0 2.5%;
-    padding-top: 20px;
-    font-size: 2.0rem;
+    margin: 0 0 16px;
+    padding: 0;
+    background: none;
+    font-size: 2.4rem;
+    line-height: 1.4;
 }
 .modal-title::before {
     display: none;
 }
 .modal-thumbnail {
-    position: relative;
-    width: 90%;
-    height: auto;
-    margin: 20px 5%;
-    margin-top: 20px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 52dvh;
+    margin: 0 auto 16px;
+    object-fit: contain;
+}
+.modal-link {
+    display: block;
+    margin: 12px 0;
+    text-align: center;
+    font-weight: 900;
 }
 .modal-text {
-    width: 90%;
-    margin: 5% 5%;
-    margin-bottom: 0;
-    padding-bottom: 7.5%;
+    width: auto;
+    margin: 16px 0 0;
+    padding-bottom: 8px;
     font-size: 1.6rem;
+    line-height: 1.7;
 }
 
 .modal-close-btn {
-    position: fixed;
-    width: 40%;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    width: min(40%, 320px);
     height: 50px;
-    left: 30%;
-    bottom: 30%;
+    margin: 12px auto 0;
     background-color: var(--green);
-    margin: 0 auto;
     border-radius: 8px;
     font-size: 3.2rem;
     text-align: center;
     color: #fff;
     cursor: pointer;
+    line-height: 50px;
 }
 .modal-close-btn:hover {
     filter: brightness(0.8);
@@ -353,12 +372,24 @@
     }
 
     /* モーダル */
-    #modal {
-        padding: 25% 0;
-    }
     .modal-wrap {
-        width: 80%;
-        left: 10%;
+        width: 100%;
+        max-height: calc(100dvh - 110px);
+    }
+    .modal-content {
+        padding: 20px;
+    }
+    .modal-title {
+        font-size: 2rem;
+    }
+    .modal-thumbnail {
+        max-height: 42dvh;
+    }
+    .modal-close-btn {
+        width: min(70%, 320px);
+        height: 46px;
+        font-size: 2.4rem;
+        line-height: 46px;
     }
 }
 /* スマホ */

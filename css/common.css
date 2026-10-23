@@ -24,6 +24,14 @@ body {
     font-weight: 500;
     background-color: var(--background);
 }
+body.scroll-locked {
+    position: fixed;
+    top: var(--scroll-lock-offset);
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+}
 
 h1 {
     font-size: 3.2rem;
@@ -374,11 +382,18 @@ footer {
         visibility: visible;
         opacity: 1;
         transition: 0.5s;
+        position: fixed;
+        top: 80px;
+        bottom: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
     }
     .header-link > nav > ul{
         display: flex;
         flex-direction: column;
         margin-top: 20%;
+        padding-bottom: 5dvh;
     }
     .header-link > nav > ul > li{
         display: block;

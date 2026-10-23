@@ -56,6 +56,7 @@ $(function() {
     const img = $('#blog img');
     const modal = $('#modal');
     $(img).click(function(){
+        lockPageScroll('modal');
         $(modal).removeClass('hidden');
         const url = $(this).attr('src');
         const alt = $(this).attr('alt');
@@ -69,5 +70,6 @@ $(function() {
 
     $(modal).click(function(){
         $(modal).addClass('hidden');
+        unlockPageScroll('modal');
     });
 });
