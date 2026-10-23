@@ -17,37 +17,62 @@ async function json_request() {
     add_new_article(articles_json, tags_json);
 }
 
-// 最新記事を見えない状態で追加
-function add_comment(articles, tags) {
-    for (let i = 0; i < Object.keys(articles).length; i ++){
-        const article = articles[i];
-        const write_html = `
-            <div class="mainvisual article hidden">
-                <a class="mainvisual article-link" href="${article.link}">
-                    <div class="mainvisual tag-icon" style="background-color:${tags[article.tag]['color']}">
-                        <img src="/img/icon/${tags[article.tag]['img']}" alt="">
-                    </div>
-                    <div class="mainvisual article-text">
-                        <div class="mainvisual date">${article.date}</div>
-                        <p class="mainvisual title">${article.title}</p>
-                    </div>
-                </a>
-            </div>
-        `;
-        articles_obj.insertAdjacentHTML('afterbegin', write_html);
-    }
-    setTimeout(visible_comment, 1000);
-    comment_interval = setInterval(visible_comment, 10000);
+function create_comment_html(article, tags) {
+    return `
+        <div class="mainvisual article hidden">
+            <a class="mainvisual article-link" href="${article.link}">
+                <div class="mainvisual tag-icon" style="background-color:${tags[article.tag]['color']}">
+                    <img src="/img/icon/${tags[article.tag]['img']}" alt="">
+                </div>
+                <div class="mainvisual article-text">
+                    <div class="mainvisual date">${article.date}</div>
+                    <p class="mainvisual title">${article.title}</p>
+                </div>
+            </a>
+        </div>
+    `;
 }
-// 一定時間毎に表示
+
 let comment_interval;
-function visible_comment(){
-    const comments = document.querySelectorAll('.article.hidden');
-    if (comments.length === 0) {
-        clearInterval(comment_interval);
+let initial_comments_remaining = 0;
+let random_articles;
+let random_article_tags;
+const max_comment_count = 15;
+
+// 最新5件を順番に表示し、その後は記事をランダムに追加
+function add_comment(articles, tags) {
+    if (articles.length === 0) {
         return;
     }
-    comments[0].classList.remove('hidden');
+
+    const latest_articles = articles.slice(-5).reverse();
+    initial_comments_remaining = latest_articles.length;
+    random_articles = articles;
+    random_article_tags = tags;
+
+    for (let i = latest_articles.length - 1; i >= 0; i--) {
+        articles_obj.insertAdjacentHTML('afterbegin', create_comment_html(latest_articles[i], tags));
+    }
+    setTimeout(visible_comment, 1000);
+    comment_interval = setInterval(visible_comment, 5000);
+}
+
+// 一定時間毎に表示
+function visible_comment(){
+    const next_comment = articles_obj.querySelector('.article.hidden');
+    if (next_comment && initial_comments_remaining > 0) {
+        next_comment.classList.remove('hidden');
+        initial_comments_remaining--;
+        return;
+    }
+
+    const article = random_articles[Math.floor(Math.random() * random_articles.length)];
+    articles_obj.insertAdjacentHTML('beforeend', create_comment_html(article, random_article_tags));
+    const random_comment = articles_obj.lastElementChild;
+    if (articles_obj.children.length > max_comment_count) {
+        articles_obj.firstElementChild.remove();
+    }
+    setTimeout(() => random_comment.classList.remove('hidden'), 50);
 }
 
 // 最新記事を追加
