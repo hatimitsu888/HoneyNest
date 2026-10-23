@@ -65,9 +65,9 @@
     z-index: 20;
     box-sizing: border-box;
     width: min(22vw, 340px);
-    max-height: calc(100dvh - 128px);
+    max-height: calc(100dvh - 136px);
     right: 5%;
-    top: 104px;
+    top: 112px;
     overflow-y: auto;
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -193,6 +193,39 @@
 
 .filter li::before {
     content: '#';
+}
+
+.filter-all {
+    gap: 8px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--gray);
+}
+.filter-all li {
+    flex: 1 1 0;
+    margin: 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 800;
+    text-align: center;
+}
+.filter-all .tag-all {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: #fff;
+}
+.filter-all .tag-all:hover {
+    background-color: var(--text-accent);
+}
+.filter-all .tag-remove {
+    border-color: var(--text-red);
+    background-color: #fff;
+    color: var(--text-red);
+}
+.filter-all .tag-remove:hover {
+    background-color: var(--link-select);
 }
 
 .filter-all li:active {
@@ -390,12 +423,25 @@
     .filters-wrap {
         width: 82vw;
         max-width: 340px;
-        max-height: calc(100dvh - 96px);
+        max-height: calc(100dvh - 117px);
         right: 0;
-        top: 80px;
+        top: 101px;
         padding: 12px;
         border-radius: 12px 0 0 12px;
+        isolation: isolate;
+        background-color: transparent;
         transition: 0.3s;
+    }
+    .filters-wrap::before {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        border-radius: inherit;
+        background-color: rgba(255, 255, 255, 0.68);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        content: '';
+        pointer-events: none;
     }
     .filters-close {
         right: calc(0px - min(82vw, 340px));
@@ -403,7 +449,7 @@
     .filters-btn {
         position: fixed;
         display: block;
-        top: 96px;
+        top: 117px;
         right: 0;
         left: auto;
     }

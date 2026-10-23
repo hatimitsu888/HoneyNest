@@ -146,8 +146,8 @@ main h1 {
     flex: 0 0 24%;
     width: auto;
     margin: 0;
-    top: 104px;
-    max-height: calc(100dvh - 128px);
+    top: 112px;
+    max-height: calc(100dvh - 136px);
     overflow-y: auto;
     overscroll-behavior: contain;
 }
@@ -351,13 +351,13 @@ main s[data-s="0"] {
     #sidebar {
         position: fixed;
         z-index: 20;
-        top: 96px;
+        top: 121px;
         right: 0;
         bottom: auto;
         box-sizing: border-box;
         width: 82vw;
         max-width: 340px;
-        max-height: calc(100dvh - 112px);
+        max-height: calc(100dvh - 137px);
         margin: 0;
         padding: 0;
         overflow-y: auto;
@@ -373,7 +373,7 @@ main s[data-s="0"] {
     .sidebar-toc-btn {
         position: fixed;
         z-index: 21;
-        top: 112px;
+        top: 137px;
         right: min(82vw, 340px);
         display: block;
         width: 36px;

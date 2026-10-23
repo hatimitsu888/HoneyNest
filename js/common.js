@@ -28,6 +28,80 @@ function unlockPageScroll(reason) {
     window.scrollTo(0, scroll_position);
 }
 
+const side_drawer_configs = [
+    { selector: '.filters-wrap', close_class: 'filters-close', handle_selector: '.filters-btn' },
+    { selector: '#sidebar', close_class: 'sidebar-toc-close', handle_selector: '.sidebar-toc-btn' }
+];
+let active_drawer_swipe = null;
+let suppress_drawer_click = false;
+
+document.addEventListener('pointerdown', (event) => {
+    if (!['touch', 'pen'].includes(event.pointerType) || !window.matchMedia('(max-width: 800px)').matches) {
+        return;
+    }
+
+    const target = event.target;
+    if (!(target instanceof Element)) {
+        return;
+    }
+
+    for (const config of side_drawer_configs) {
+        const drawer = document.querySelector(config.selector);
+        if (!drawer) {
+            continue;
+        }
+        const is_closed = drawer.classList.contains(config.close_class);
+        active_drawer_swipe = {
+            drawer,
+            close_class: config.close_class,
+            start_x: event.clientX,
+            start_y: event.clientY,
+            is_closed
+        };
+        return;
+    }
+});
+
+document.addEventListener('pointerup', (event) => {
+    if (!active_drawer_swipe) {
+        return;
+    }
+
+    const swipe = active_drawer_swipe;
+    active_drawer_swipe = null;
+    const delta_x = event.clientX - swipe.start_x;
+    const delta_y = event.clientY - swipe.start_y;
+    if (Math.abs(delta_x) < 48 || Math.abs(delta_x) < Math.abs(delta_y) * 1.25) {
+        return;
+    }
+
+    if ((swipe.is_closed && delta_x < 0) || (!swipe.is_closed && delta_x > 0)) {
+        if (swipe.is_closed) {
+            swipe.drawer.classList.remove(swipe.close_class);
+        } else {
+            swipe.drawer.classList.add(swipe.close_class);
+        }
+        suppress_drawer_click = true;
+        window.setTimeout(() => {
+            suppress_drawer_click = false;
+        }, 0);
+    }
+});
+
+document.addEventListener('pointercancel', () => {
+    active_drawer_swipe = null;
+});
+
+document.addEventListener('click', (event) => {
+    if (!suppress_drawer_click) {
+        return;
+    }
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    suppress_drawer_click = false;
+}, true);
+
 hamburger.addEventListener('click', () => {
     header.classList.toggle('open');
     header_link.classList.toggle('open');

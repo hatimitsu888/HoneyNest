@@ -315,6 +315,11 @@ footer {
     top: 26px;
 }
 @media screen and (max-width: 800px) {
+    html,
+    body {
+        touch-action: pan-y;
+    }
+
     /* ヘッダー */
     header {
         font-size: 2.4rem;
