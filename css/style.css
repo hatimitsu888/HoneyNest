@@ -10,7 +10,7 @@ html::-webkit-scrollbar {
 
 /* メインビジュアル */
 #mainvisual {
-    border-bottom: 8px solid var(--main);
+    border-bottom: 8px solid var(--accent);
 }
 
 .mainvisual-flex {
@@ -48,9 +48,8 @@ html::-webkit-scrollbar {
 }
 
 .top-articles > h1 {
-    background-color: #fff;
+    background-color: var(--main);
     padding: 18px 24px;
-    border-bottom: 1px solid var(--border);
     font-size: 2.4rem;
 }
 .line {
@@ -165,9 +164,20 @@ html::-webkit-scrollbar {
     display: inline;
 }
 .section-line {
-    background-color: #fff;
-    padding: 6px 28px;
-    border-radius: 6px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+}
+.section-line::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 180px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--main);
+    transform: translateX(-50%);
 }
 
 .new-articles {
