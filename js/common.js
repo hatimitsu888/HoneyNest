@@ -33,9 +33,10 @@ const side_drawer_configs = [
     { selector: '#sidebar', close_class: 'sidebar-toc-close', handle_selector: '.sidebar-toc-btn' }
 ];
 let active_drawer_swipe = null;
-let suppress_drawer_click = false;
+let pending_swipe_click = null;
 
 document.addEventListener('pointerdown', (event) => {
+    pending_swipe_click = null;
     if (!['touch', 'pen'].includes(event.pointerType) || !window.matchMedia('(max-width: 800px)').matches) {
         return;
     }
@@ -56,6 +57,7 @@ document.addEventListener('pointerdown', (event) => {
             close_class: config.close_class,
             start_x: event.clientX,
             start_y: event.clientY,
+            click_target: target.closest('a, button, input, textarea, select, summary, [role], [onclick], img, .filters-btn, .sidebar-toc-btn, .thumbnails-area > div'),
             is_closed
         };
         return;
@@ -81,10 +83,10 @@ document.addEventListener('pointerup', (event) => {
         } else {
             swipe.drawer.classList.add(swipe.close_class);
         }
-        suppress_drawer_click = true;
-        window.setTimeout(() => {
-            suppress_drawer_click = false;
-        }, 0);
+        pending_swipe_click = swipe.click_target ? {
+            target: swipe.click_target,
+            expires_at: performance.now() + 500
+        } : null;
     }
 });
 
@@ -93,13 +95,22 @@ document.addEventListener('pointercancel', () => {
 });
 
 document.addEventListener('click', (event) => {
-    if (!suppress_drawer_click) {
+    if (!pending_swipe_click) {
         return;
     }
 
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    suppress_drawer_click = false;
+    const pending_click = pending_swipe_click;
+    if (performance.now() > pending_click.expires_at) {
+        pending_swipe_click = null;
+        return;
+    }
+
+    const target = event.target;
+    if (target instanceof Node && (target === pending_click.target || pending_click.target.contains(target))) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+    }
+    pending_swipe_click = null;
 }, true);
 
 hamburger.addEventListener('click', () => {
