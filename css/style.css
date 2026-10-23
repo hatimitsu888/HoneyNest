@@ -10,12 +10,12 @@ html::-webkit-scrollbar {
 
 /* メインビジュアル */
 #mainvisual {
-    border-bottom: solid 40px var(--blue);
+    border-bottom: 8px solid var(--main);
 }
 
 .mainvisual-flex {
     display: flex;
-    background-color: #000;
+    background-color: #171d21;
 }
 
 .Youtube-contents {
@@ -44,19 +44,19 @@ html::-webkit-scrollbar {
     width: 40vw;
     height: calc(100vh - 80px);
     background-color: #fff;
-    border-radius: 16px 0 0 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .top-articles > h1 {
-    background-color: var(--yellow);
-    padding: 16px 16px;
-    border-radius: 16px 0 0 0;
+    background-color: #fff;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    font-size: 2.4rem;
 }
 .line {
     width: 100%;
-    height: 5px;
-    background-color: var(--blue);
-    margin: 0 auto;
+    height: 3px;
+    background-color: var(--main);
 }
 
 .article-area {
@@ -80,7 +80,9 @@ html::-webkit-scrollbar {
 .mainvisual.article {
     position: relative;
     width: calc(100% - 32px);
-    margin: 16px 16px;
+    margin: 8px 16px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .mainvisual.article::before {
     content: "";
@@ -90,13 +92,13 @@ html::-webkit-scrollbar {
     width: 0%;
     height: 100%;
     z-index: 0;
-    background-color: var(--yellow);
-    border-left: solid 5px var(--blue);
-    transition: 0.2s;
+    background-color: var(--link-select);
+    border-left: solid 4px var(--main);
+    transition: width 0.25s ease;
 }
 .mainvisual.article:hover::before {
     width: 100%;
-    transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: width 0.25s ease;
 }
 
 .mainvisual.article.hidden {
@@ -115,7 +117,7 @@ html::-webkit-scrollbar {
 
 .mainvisual.article-link {
     display: block;
-    padding: 5px 5px;
+    padding: 12px 8px;
     text-decoration: initial;
     color: #000;
 }
@@ -123,9 +125,11 @@ html::-webkit-scrollbar {
 .mainvisual.tag-icon {
     position: absolute;
     left: 10px;
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .mainvisual.tag-icon > img {
     position: absolute;
@@ -140,9 +144,8 @@ html::-webkit-scrollbar {
 .mainvisual.article-text {
     position: relative;
     z-index: 1;
-    margin: 2px 8px;
-    margin-left: 58px;
-    padding-bottom: 8px;
+    margin: 0 8px 0 54px;
+    padding-bottom: 0;
 }
 .mainvisual.article-text > .date{
     margin-bottom: 4px;
@@ -152,18 +155,19 @@ html::-webkit-scrollbar {
 
 /* 最新記事 */
 #articles {
-    padding: 10% 10%;
+    padding: 80px 10%;
 }
 .section-title {
     text-align: center;
 }
 .section-title h1 {
-    font-size: 48px;
+    font-size: 3.6rem;
     display: inline;
 }
 .section-line {
-    background-color: var(--yellow);
-    padding: 5px 32px;
+    background-color: #fff;
+    padding: 6px 28px;
+    border-radius: 6px;
 }
 
 .new-articles {
@@ -189,13 +193,15 @@ html::-webkit-scrollbar {
     padding-bottom: 64px;
     margin: 32px 0;
     background-color: #fff;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 0 0 16px 16px;
-    transition: 0.3s;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .new-article.article:hover {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
-    transition: 0.3s;
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
 }
 .new-article.article:nth-of-type(-n + 2) {
     width: 45%;
@@ -220,8 +226,8 @@ html::-webkit-scrollbar {
     transition: 0.3s;
 }
 .new-article.article:hover .thumbnail img {
-    height: 110%;
-    transition: 0.3s;
+    height: 106%;
+    transition: 0.25s;
 } 
 .new-article.article:hover {
     color: initial;
@@ -238,9 +244,9 @@ html::-webkit-scrollbar {
     display: inline;
     position: absolute;
     padding: 5px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 250, 237, 0.92);
     border: solid 3px transparent;
-    border-radius: 5px;
+    border-radius: 20px;
     top: 0;
     margin: 5px;
     text-align: left;
@@ -248,7 +254,7 @@ html::-webkit-scrollbar {
 }
 .new-article.title {
     margin: 0 5%;
-    margin-top: 8px;
+    margin-top: 16px;
     font-weight: 500;
     text-align: justify;
 }
@@ -260,19 +266,20 @@ html::-webkit-scrollbar {
 .blog-link {
     display: inline-block;
     padding: 16px 10%;
-    background-color: var(--yellow);
-    border-radius: 16px;
+    background-color: var(--main);
+    border: 1px solid var(--main);
+    border-radius: 12px;
     box-sizing: border-box;
     font-size: 2.4rem;
     font-weight: 800;
     color: #000;
     text-decoration: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .blog-link:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    transition: 0.3s;
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
 }
 /* 最新記事 */
 
@@ -284,22 +291,22 @@ html::-webkit-scrollbar {
         flex-direction: column;
     }
     .Youtube-contents {
-        width: 100svw;
-        height: calc(40vh - 40px);
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
     .Youtube-contents-center {
-        width: auto;
-        height: 100%;
+        width: 100%;
+        height: auto;
     }
     .Youtube-contents-center > iframe{
-        width: auto;
-        height: 100%;
-        max-width: 100svw;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
     }
     .top-articles {
-        width: 100dvw;
-        height: calc(60svh - 40px);
-        border-radius: 16px 16px 0 0;
+        width: 100%;
+        height: min(60svh, 520px);
     }
     /* メインビジュアル */
 
@@ -309,6 +316,9 @@ html::-webkit-scrollbar {
     }
     .new-article.article:first-of-type {
         width: 100%;
+    }
+    #articles {
+        padding: 56px 6%;
     }
     .new-article.article:nth-of-type(2) {
         font-size: 1.6rem;

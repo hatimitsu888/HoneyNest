@@ -30,6 +30,23 @@ $(function() {
     // 書き出し
     $(toc_area).append(write_toc);
 
+    const sidebar = $('#sidebar');
+    const sidebar_toc = sidebar.find('.toc.right');
+    if (sidebar_toc.length) {
+        const sidebar_button = $('<div class="sidebar-toc-btn" aria-label="目次を開閉"></div>');
+        sidebar.prepend(sidebar_button);
+        sidebar.addClass('sidebar-toc-close');
+        sidebar_button.on('click', function() {
+            sidebar.toggleClass('sidebar-toc-close');
+        });
+    }
+
+    $('main').on('click', '#sidebar .toc a', function() {
+        if (window.matchMedia('(max-width: 800px)').matches) {
+            sidebar.addClass('sidebar-toc-close');
+        }
+    });
+
     // 目次をクリック
     $('main').on('click', '.toc a', function(event) {
         event.preventDefault();

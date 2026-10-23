@@ -1,60 +1,87 @@
 /* https://www.colorsupplyyy.com/s/dOJx7KDwqp */
 
 #articles {
-    width: calc(100vw - 20%);
-    margin: 5%;
-    margin-right: 2.5%;
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    margin: 0;
+    padding: clamp(24px, 3vw, 40px);
+    border: 1px solid var(--border);
+    border-radius: 14px;
     background-color: #fff;
-    padding: 5%;
+    box-shadow: var(--shadow);
 }
 
 /* 並べ替え・絞り込み */
 #filters {
     position: relative;
+    box-sizing: border-box;
+    flex: 0 0 25%;
+    width: 25%;
     margin-top: 5%;
 }
 .filters-wrap {
-    background-color: #fff;
     position: fixed;
-    width: 25vw;
+    z-index: 20;
+    box-sizing: border-box;
+    width: min(22vw, 340px);
+    max-height: calc(100dvh - 128px);
     right: 5%;
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+    top: 104px;
+    overflow-y: auto;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+    scrollbar-width: thin;
     transition: 0.3s;
 }
-.filters-close {
-    right: -25vw;
-}
-
 .filters-btn {
+    display: none;
     position: absolute;
+    z-index: 21;
     left: -40px;
     width: 36px;
     height: 36px;
+    border-radius: 8px 0 0 8px;
     mask-position: center center;
     mask-repeat: no-repeat;
     mask-size: contain;
     mask-image: url(../../img/close.svg);
-    background-color: var(--yellow);
+    background-color: var(--main);
     cursor: pointer;
 }
 .filters-close > .filters-btn {
     mask-image: url(../../img/arrow.svg);
 }
 
+@media screen and (min-width: 801px) and (max-width: 900px) {
+    .filters-wrap {
+        right: 2%;
+    }
+}
+
 .sarch {
     position: relative;
-    background-color: #fff;
-    margin-bottom: 64px;
-    padding-bottom: 5px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
     font-size: 1.6rem;
 }
+.sort-wrap {
+    border-bottom: 2px solid var(--main);
+}
 .sarch-title {
+    position: relative;
     display: block;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: 900;
-    padding-left: 50px;
-    background-color: var(--yellow);
-    border-radius: 0 0 16px 0;
+    padding: 10px 12px 10px 42px;
+    background-color: #fff;
+    border-radius: 8px;
     user-select: none;
 }
 .sarch-title::-webkit-details-marker {
@@ -63,12 +90,13 @@
 .sarch-title::before {
     content: '';
     position: absolute;
-    left: 5px;
-    top: 5px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     display: block;
-    width: 28px;
-    height: 28px;
-    background-color: rgba(0, 0, 0, 0.8);
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent);
 }
 /* 左のアイコン */
 .sort-title::before {
@@ -111,51 +139,48 @@
     flex-wrap: wrap;
 }
 .sarch-btns li {
-    padding: 2.5px 8px;
-    margin: 10px 5px;
+    padding: 5px 12px;
+    margin: 6px 4px;
     background-color: #fff;
-    border: solid 3px transparent;
-    border-radius: 32px;
+    border: 1px solid var(--accent);
+    border-radius: 24px;
     cursor: pointer;
     user-select: none;
+    transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
 }
 .sarch-btns li:hover {
-    filter: brightness(80%);
+    border-color: var(--accent);
+    background-color: var(--link-select);
 }
 .sarch-btns li:active {
     filter: brightness(100%);
 }
 
-.sort li {
-    border-color: var(--green);
-}
 .filter {
     font-size: 1.2rem;
     justify-content: flex-start;
 }
 .filter li {
     margin: 5px 2.5px;
-    border-color: var(--blue);
 }
 .filter li::before {
     content: '';
 }
 
-.filter-all li {
-    border-color: var(--yellow);
-}
 .filter-all li:active {
-    background-color: var(--yellow);
+    background-color: var(--button-select);
 }
 
 .selected {
     color: #fff;
 }
 .sort .selected {
-    background-color: var(--green);
+    background-color: var(--button-select);
+    border-color: var(--button-select);
 }
 .filter .selected {
-    background-color: var(--blue);
+    background-color: var(--accent);
+    border-color: var(--accent);
 }
 
 /* サムネ */
@@ -171,15 +196,17 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
-    border-radius: 5%;
+    border: 1px solid var(--border);
+    border-radius: 10px;
     margin: 0.25%;
-    transition: 0.3s;
-    box-shadow: inset 0 0 0px var(--yellow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--shadow);
     cursor: pointer;
 }
 .thumbnails-area div:hover {
     background-size: 105%;
-    box-shadow: inset 0 0 20px var(--yellow);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
 }
 /* サムネ */
 
@@ -197,9 +224,10 @@
     display: flex;
     width: 32px;
     height: 32px;
-    border-radius: 3px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
     background-color: #fff;
-    box-shadow: 0 0 3px #000;
+    box-shadow: 0 2px 5px rgba(57, 43, 20, 0.07);
     cursor: pointer;
     user-select: none;
 }
@@ -223,10 +251,11 @@
 }
 .pagination .selected {
     color: #000;
-    background-color: var(--yellow);
+    background-color: var(--button-select);
 }
 .pagination li:hover {
-    filter: brightness(0.8);
+    border-color: var(--main);
+    background-color: var(--link-select);
 }
 .pagination .hidden {
     display: none;
@@ -315,7 +344,7 @@
     width: min(40%, 320px);
     height: 50px;
     margin: 12px auto 0;
-    background-color: var(--green);
+    background-color: var(--button-select);
     border-radius: 8px;
     font-size: 3.2rem;
     text-align: center;
@@ -332,8 +361,13 @@
 /* スマホ */
 @media screen and (max-width: 800px) {
     #articles {
-        width: 100vw;
-        margin: 50px 0;
+        width: auto;
+        margin: 0;
+        padding: 24px 5%;
+    }
+    #filters {
+        width: auto;
+        margin: 0;
     }
     .sarch {
         font-size: 1.6rem;
@@ -360,15 +394,24 @@
 
     /* フィルター */
     .filters-wrap {
-        width: 60vw;
+        width: 82vw;
+        max-height: calc(100dvh - 96px);
         right: 0;
-        background-color: #fff;
+        top: 80px;
+        padding: 12px;
     }
     .filters-close {
-        right: -60vw;
+        right: calc(0px - min(82vw, 340px));
     }
     .filters-btn {
+        position: fixed;
         display: block;
+        top: 96px;
+        right: 0;
+        left: auto;
+    }
+    .filters-wrap:not(.filters-close) > .filters-btn {
+        right: min(82vw, 340px);
     }
 
     /* モーダル */

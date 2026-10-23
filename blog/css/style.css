@@ -1,11 +1,16 @@
 /* https://www.colorsupplyyy.com/s/dOJx7KDwqp */
 
 #articles {
-    width: calc(75vw - 22.5%);
-    margin: 5%;
-    margin-right: 2.5%;
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    margin: 0;
+    padding: clamp(24px, 3vw, 40px);
+    border: 1px solid var(--border);
+    border-radius: 14px;
     background-color: #fff;
-    padding: 5%;
+    box-shadow: var(--shadow);
 }
 
 .article-search {
@@ -32,14 +37,14 @@
     width: 100%;
     min-width: 0;
     padding: 10px 14px;
-    border: 2px solid var(--blue);
+    border: 2px solid var(--accent);
     border-radius: 8px;
     background-color: #fff;
     color: #000;
     font: inherit;
 }
 .article-search input:focus-visible {
-    outline: 3px solid var(--yellow);
+    outline: 3px solid var(--main);
     outline-offset: 2px;
 }
 .no-search-results {
@@ -50,41 +55,68 @@
 /* 並べ替え・絞り込み */
 #filters {
     position: relative;
+    box-sizing: border-box;
+    flex: 0 0 25%;
+    width: 25%;
     margin-top: 5%;
 }
 .filters-wrap {
     position: fixed;
-    width: 25vw;
+    z-index: 20;
+    box-sizing: border-box;
+    width: min(22vw, 340px);
+    max-height: calc(100dvh - 128px);
     right: 5%;
+    top: 104px;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+    scrollbar-width: thin;
+    transition: right 0.25s ease, box-shadow 0.2s ease;
 }
 
 .filters-btn {
     display: none;
     position: absolute;
-    left: -40px;
+    z-index: 21;
+    left: -44px;
     width: 36px;
     height: 36px;
+    border-radius: 8px 0 0 8px;
     mask-position: center center;
     mask-repeat: no-repeat;
     mask-size: contain;
     mask-image: url(../../img/close.svg);
-    background-color: var(--yellow);
+    background-color: var(--main);
+}
+
+@media screen and (min-width: 801px) and (max-width: 900px) {
+    .filters-wrap {
+        right: 2%;
+    }
 }
 
 .sarch {
     position: relative;
-    background-color: #fff;
-    margin-bottom: 64px;
-    padding-bottom: 5px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
     font-size: 1.6rem;
 }
+.sort-wrap {
+    border-bottom: 2px solid var(--main);
+}
 .sarch-title {
+    position: relative;
     display: block;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: 900;
-    padding-left: 50px;
-    background-color: var(--yellow);
-    border-radius: 0 0 16px 0;
+    padding: 10px 12px 10px 42px;
+    background-color: #fff;
+    border-radius: 8px;
     user-select: none;
 }
 .sarch-title::-webkit-details-marker {
@@ -93,12 +125,13 @@
 .sarch-title::before {
     content: '';
     position: absolute;
-    left: 5px;
-    top: 5px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     display: block;
-    width: 28px;
-    height: 28px;
-    background-color: rgba(0, 0, 0, 0.8);
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent);
 }
 /* 左のアイコン */
 .sort-title::before {
@@ -141,46 +174,41 @@
     flex-wrap: wrap;
 }
 .sarch-btns li {
-    padding: 2.5px 8px;
-    margin: 10px 5px;
+    padding: 5px 12px;
+    margin: 6px 4px;
     background-color: #fff;
-    border: solid 3px transparent;
-    border-radius: 32px;
+    border: 1px solid var(--accent);
+    border-radius: 24px;
     cursor: pointer;
     user-select: none;
+    transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
 }
 .sarch-btns li:hover {
-    filter: brightness(80%);
+    border-color: var(--accent);
+    background-color: var(--link-select);
 }
 .sarch-btns li:active {
     filter: brightness(100%);
 }
 
-.sort li {
-    border-color: var(--green);
-}
-.filter li {
-    border-color: var(--blue);
-}
 .filter li::before {
     content: '#';
 }
 
-.filter-all li {
-    border-color: var(--yellow);
-}
 .filter-all li:active {
-    background-color: var(--yellow);
+    background-color: var(--button-select);
 }
 
 .selected {
     color: #fff;
 }
 .sort .selected {
-    background-color: var(--green);
+    background-color: var(--button-select);
+    border-color: var(--button-select);
 }
 .filter .selected {
-    background-color: var(--blue);
+    background-color: var(--accent);
+    border-color: var(--accent);
 }
 
 /* 記事 */
@@ -195,12 +223,18 @@
     height: 120px;
     padding: 10px;
     margin: 30px 0;
-    background-color: var(--gray);
+    background-color: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
     color: #000;
     text-decoration: none;
 }
 .article:hover {
-    background-color: var(--select);
+    background-color: #fff;
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
 }
 .thumbnail {
     position: relative;
@@ -259,9 +293,10 @@
     display: flex;
     width: 32px;
     height: 32px;
-    border-radius: 3px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
     background-color: #fff;
-    box-shadow: 0 0 3px #000;
+    box-shadow: 0 2px 5px rgba(57, 43, 20, 0.07);
     cursor: pointer;
     user-select: none;
 }
@@ -285,10 +320,11 @@
 }
 .pagination .selected {
     color: #000;
-    background-color: var(--yellow);
+    background-color: var(--button-select);
 }
 .pagination li:hover {
-    filter: brightness(0.8);
+    border-color: var(--main);
+    background-color: var(--link-select);
 }
 .pagination .hidden {
     display: none;
@@ -299,8 +335,13 @@
 /* スマホ */
 @media screen and (max-width: 800px) {
     #articles {
-        width: 100vw;
-        margin: 50px 0;
+        width: auto;
+        margin: 0;
+        padding: 24px 5%;
+    }
+    #filters {
+        width: auto;
+        margin: 0;
     }
     .article-search {
         gap: 8px;
@@ -347,19 +388,30 @@
 
     /* フィルター */
     .filters-wrap {
-        width: 60vw;
+        width: 82vw;
+        max-width: 340px;
+        max-height: calc(100dvh - 96px);
         right: 0;
-        background-color: #fff;
+        top: 80px;
+        padding: 12px;
+        border-radius: 12px 0 0 12px;
         transition: 0.3s;
     }
     .filters-close {
-        right: -60vw;
+        right: calc(0px - min(82vw, 340px));
     }
     .filters-btn {
+        position: fixed;
         display: block;
+        top: 96px;
+        right: 0;
+        left: auto;
     }
     .filters-close > .filters-btn {
         mask-image: url(../../img/arrow.svg);
+    }
+    .filters-wrap:not(.filters-close) > .filters-btn {
+        right: min(82vw, 340px);
     }
 }
 /* スマホ */

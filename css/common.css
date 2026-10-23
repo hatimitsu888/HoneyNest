@@ -3,13 +3,18 @@
 /* 変数 */
 :root {
     /* 色 */
-    --background: #fffaed;
-    --select: #f0f0f0;
+    --base: #fffaed;
+    --main: #ffcb4f;
+    --accent: #295ea4;
+    --text-accent: #295ea4;
+    --link-select: #f0f0f0;
+    --button-select: #00be70;
+    --text-red: #fa5a5a;
     --gray: #f8f8f8;
-    --yellow: #ffcb4f;
-    --blue: #295ea4;
-    --green: #00be70;
-    --red: #fa5a5a;
+    --muted-text: #70685b;
+    --border: var(--gray);
+    --shadow: 0 4px 16px rgba(57, 43, 20, 0.09);
+    --shadow-hover: 0 8px 24px rgba(57, 43, 20, 0.14);
 }
 
 /* 全体 */
@@ -22,7 +27,7 @@ body {
     line-height: 1.5;
     font-family: "Open Sans", "M PLUS 2", sans-serif;
     font-weight: 500;
-    background-color: var(--background);
+    background-color: var(--base);
 }
 body.scroll-locked {
     position: fixed;
@@ -51,9 +56,10 @@ header {
     top: 0;
     width: auto;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0px -2.5px 5px 5px #000;
-    font-size: 3.2rem;
+    background-color: #fff;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(57, 43, 20, 0.08);
+    font-size: 2.4rem;
     font-weight: 800;
 }
 header a{
@@ -103,16 +109,15 @@ header a:active{
 .header-link > nav > ul > li {
     display: inline-block;
     text-align: center;
-    width: 200px;
+    width: 160px;
     height: 100%;
-    padding: 10px 0;
-    border-left: solid 1.5px #888;
-    border-right: solid 1.5px #888;
+    padding: 8px 0;
+    border-radius: 8px;
     cursor: pointer;
     user-select: none;
 }
 .header-link > nav > ul > li:hover {
-    background-color: var(--yellow);
+    background-color: var(--link-select);
     transition: 0.3s;
 }
 
@@ -122,88 +127,71 @@ header a:active{
 }
 .dropdown-lists {
     position: absolute;
-    left: -1px;
+    top: 100%;
+    left: 0;
     visibility: hidden;
     width: 100%;
     margin-top: 0;
+    padding: 6px;
+    box-sizing: border-box;
     opacity: 0;
     font-size: 1.8rem;
-    font-weight: 900;
+    font-weight: 700;
     background-color: #fff;
-    box-shadow: 0 3px 3px #888;
-    border-left: solid 1.5px #888;
-    border-right: solid 1.5px #888;
-    transition: 0.2s;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    transform: translateY(-4px);
 }
-.header-link > nav > ul > li:hover > .dropdown-lists{
+.header-link > nav > ul > li:hover > .dropdown-lists,
+.header-link > nav > ul > li:focus-within > .dropdown-lists{
     visibility: visible;
-    margin-top: 10px;
     opacity: 1;
-    transition: 0.2s;
+    transform: translateY(0);
 }
 .dropdown-list {
-    border-bottom: solid 1px #888;
+    border-radius: 8px;
 }
 .dropdown-list a{
     position: relative;
     display: block;
-    padding: 16px 0;
+    padding: 12px 10px;
+    border-radius: inherit;
+    transition: background-color 0.2s ease, color 0.2s ease;
     transform: translate(0, 0);
 }
 .dropdown-list:hover {
     transition: 0.3s;
 }
 .dropdown-list:hover a {
-    color: #fff;
+    color: var(--accent);
     transition: 0.3s;
 }
 .dropdown-list.Youtube:hover {
-    background-color: #f00;
+    background-color: var(--link-select);
+    color: var(--accent);
 }
 .dropdown-list.Niconico:hover {
-    background-color: #252525;
-    color: #fff;
-}
-.dropdown-list.TikTok:hover {
-    background-color: #000;
-}
-.dropdown-list.TikTok:hover a {
-    color: #25F4EE;
-    transform: translate(-2px, -2px);
-}
-.dropdown-list.TikTok a::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 16px;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    color: #FE2C55;
-    transform: translate(0, 0);
-    mix-blend-mode: screen;
-}
-.dropdown-list.TikTok:hover a::before {
-    transform: translate(2px, 2px);
-    opacity: 1;
-    transition: 0.3s;
+    background-color: var(--link-select);
+    color: #333;
 }
 .dropdown-list.X:hover {
-    background-color: #000;
+    background-color: var(--link-select);
 }
 .dropdown-list.Twitch:hover {
-    background-color: #9147ff;
+    background-color: var(--link-select);
 }
 .dropdown-list.CraftersColoney:hover {
-    background-color: #7fce00;
+    background-color: var(--link-select);
 }
 /* ヘッダー */
 
 /* フッター */
 footer {
-    background-color: var(--blue);
-    color: #ccc;
-    padding: 60px;
-    padding-bottom: 30px;
+    background-color: var(--accent);
+    color: var(--gray);
+    padding: 48px 24px 28px;
 }
 .copylight {
     display: block;
@@ -235,7 +223,7 @@ footer {
 .privacy-policy {
     display: block;
     margin: 32px 0;
-    margin-bottom: 64px;
+    margin-bottom: 40px;
 }
 /* フッター */
 
@@ -245,10 +233,9 @@ footer {
     right: 2.5%;
     bottom: 20%;
     display: none;
-    width: 100px;
-    height: 100px;
-
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+    width: 72px;
+    height: 72px;
+    filter: drop-shadow(0 3px 5px rgba(57, 43, 20, 0.16));
 }
 .hex {
     position: relative;
@@ -272,7 +259,7 @@ footer {
         5% 23%,
         50% 5%
     );
-    background-color: var(--yellow);
+    background-color: var(--main);
     opacity: 0.8;
 
     transition: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
@@ -315,22 +302,22 @@ footer {
     position: absolute;
     display: block;
     width: 50px;
-    height: 8px;
+    height: 5px;
     border-radius: 10px;
-    background-color: #000;
+    background-color: var(--accent);
     transition: 0.5s;
     top: 0;
 }
 .hamburger-icon::before {
-    top: 16px;
+    top: 13px;
 }
 .hamburger-icon::after {
-    top: 32px;
+    top: 26px;
 }
 @media screen and (max-width: 800px) {
     /* ヘッダー */
     header {
-        font-size: 5rem;
+        font-size: 2.4rem;
     }
     header::after {
         content: '';
@@ -342,7 +329,7 @@ footer {
         z-index: -1;
         display: block;
         height: 0dvh;
-        background-color: rgba(255, 255, 255, 0.75);
+        background-color: rgba(255, 255, 255, 0.96);
         backdrop-filter: blur(4px);
         transition: 0.2s;
     }
@@ -354,12 +341,14 @@ footer {
         display: block;
         z-index: 99;
         cursor: pointer;
+        width: 42px;
+        height: 36px;
     }
     .hamburger.open > .hamburger-icon,.hamburger-icon::before,.hamburger-icon::after{
         transition: 0.5s;
     }
     .hamburger.open > .hamburger-icon{
-        top: 16px;
+        top: 13px;
         transform: rotate(45deg);
     }
     .hamburger.open > .hamburger-icon::before{
@@ -388,26 +377,43 @@ footer {
         overflow-y: auto;
         overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch;
+        background-color: #fff;
     }
     .header-link > nav > ul{
         display: flex;
         flex-direction: column;
-        margin-top: 20%;
-        padding-bottom: 5dvh;
+        margin-top: 8%;
+        padding-bottom: 24px;
     }
     .header-link > nav > ul > li{
         display: block;
+        box-sizing: border-box;
         width: 80vw;
         height: auto;
-        border: none;
+        border: 1px solid var(--accent);
         margin: 0 auto;
-        margin-top: 10%;
+        margin-top: 24px;
+        padding: 12px 16px;
+        font-size: 2.4rem;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: var(--shadow);
+        transition: background-color 0.2s ease;
     }
     .link-button {
         text-align: left;
+        cursor: default;
     }
-    .header-link > nav > ul > li:first-child{
-        border-bottom: solid 1.5px #888;
+    .header-link > nav > ul > li.link-button {
+        padding: 12px 0 0;
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
+        text-indent: 16px;
+    }
+    .header-link.open > nav > ul > li.link-button:hover {
+        background-color: transparent;
     }
     .dropdown-lists {
         visibility: unset;
@@ -416,45 +422,33 @@ footer {
         box-shadow: none;
         border: none;
         background-color: transparent;
-        font-size: 2.6rem;
+        font-size: 1.8rem;
+        text-indent: 0;
     }
-    .header-link > nav > ul > li:hover {
-        background-color: initial;
+    .header-link.open > nav > ul > li:hover {
+        background-color: var(--link-select);
     }
     .header-link > nav > ul > li:hover > .dropdown-lists {
         margin-top: 0;
     }
     .dropdown-list {
-        border: none;
+        border: 0;
         text-align: left;
-        padding-left: 3%;
-        margin: 20px 0;
-        font-size: 2.0rem;
+        padding: 0;
+        margin: 12px 0;
+        font-size: 1.8rem;
     }
     .dropdown-list a {
-        padding: 4px;
+        padding: 10px 14px;
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: var(--shadow);
+        color: var(--accent);
+        transition: background-color 0.2s ease;
     }
-    .dropdown-list.Youtube {
-        border-left: solid 10px #f00;
-    }
-    .dropdown-list.Niconico {
-        border-left: solid 10px #252525;
-    }
-    .dropdown-list.TikTok {
-        border-left: solid 10px #000;
-    }
-    .dropdown-list.TikTok a::before {
-        top: 4px;
-        left: 4px;
-    }
-    .dropdown-list.X {
-        border-left: solid 10px #000;
-    }
-    .dropdown-list.Twitch {
-        border-left: solid 10px #9147ff;
-    }
-    .dropdown-list.CraftersColoney {
-        border-left: solid 10px #7fce00;
+    .dropdown-list:hover a {
+        background-color: var(--link-select);
     }
     /* ヘッダー */
 
@@ -462,8 +456,8 @@ footer {
     .page-top {
         right: 5%;
         bottom: 10%;
-        width: 80px;
-        height: 80px;
+        width: 56px;
+        height: 56px;
     }
     .hex {
         width: 75%;
