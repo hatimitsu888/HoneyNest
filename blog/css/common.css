@@ -34,6 +34,11 @@ main {
     margin-bottom: 32px;
     font-size: 1.6rem;
 }
+#blog > .breadcrumbs {
+    position: relative;
+    left: calc(clamp(24px, 3vw, 40px) - clamp(24px, 4vw, 56px));
+    top: calc(clamp(24px, 3vw, 40px) - clamp(24px, 4vw, 56px));
+}
 .breadcrumbs a,
 .breadcrumbs p {
     display: inline;
@@ -340,7 +345,7 @@ main s[data-s="0"] {
     }
     #blog {
         width: 100%;
-        margin: 20px 0;
+        margin: 0;
         padding: 24px 6%;
         font-size: 1.6rem;
     }
@@ -348,16 +353,20 @@ main s[data-s="0"] {
     .toc {
         width: auto;
     }
+    #blog > .breadcrumbs {
+        left: -1%;
+        top: 0;
+    }
     #sidebar {
         position: fixed;
         z-index: 20;
-        top: 121px;
+        top: 101px;
         right: 0;
         bottom: auto;
         box-sizing: border-box;
         width: 82vw;
         max-width: 340px;
-        max-height: calc(100dvh - 137px);
+        max-height: calc(100dvh - 117px);
         margin: 0;
         padding: 0;
         overflow-y: auto;
@@ -373,7 +382,7 @@ main s[data-s="0"] {
     .sidebar-toc-btn {
         position: fixed;
         z-index: 21;
-        top: 137px;
+        top: 117px;
         right: min(82vw, 340px);
         display: block;
         width: 36px;
