@@ -170,6 +170,9 @@ main h1 {
     background-color: #fff;
     box-shadow: var(--shadow);
 }
+.toc li {
+    margin: 8px 0;
+}
 
 /* 見出し1 */
 main h2 {
