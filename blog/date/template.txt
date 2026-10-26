@@ -22,10 +22,10 @@
 
     <!-- ▼ 変更する必要のある物 ▼ -->
     
-    <title>タイトル</title>
+    <title></title>
     <meta property="og:title" content="タイトル">
-    <meta property="og:url" content="https://htmt888.com/blog/date/記事のurl">
-    <meta property="og:image" content="https://htmt888.com/blog/date/サムネイル">
+    <meta property="og:url" content="https://htmt888.com/blog/date/">
+    <meta property="og:image" content="https://htmt888.com/blog/date/">
     <meta property="og:description" content="説明">
     <meta name="description" content="説明">
 
@@ -80,10 +80,10 @@
             <h1>タイトル</h1>
             <!-- <div class="pr">※こちらの記事にはプロモーションが含まれています。</div> -->
             <div class="info">
-                <p class="tag">#ブログ</p>
+                <p class="tag">タグ</p>
                 <span class="date">
                     <!-- 書いた日 -->
-                    <p class="wrote">年月日</p>
+                    <p class="wrote">yyyy/mm/dd</p>
                     <!-- 更新日 -->
                     <!-- <p class="update"></p> -->
                 </span>
@@ -96,8 +96,8 @@
             <!-- 目次 -->
             
             <!-- 本文 -->
-            <h2>見出し</h2>
-            <p>本文</p>
+            <h2></h2>
+            <p></p>
             <!-- 本文 -->
         </section>
 
